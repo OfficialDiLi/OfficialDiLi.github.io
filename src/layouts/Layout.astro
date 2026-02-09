@@ -1,0 +1,178 @@
+---
+import '../styles/global.css'
+const { title, description = "Aspiring Computational Researcher | AI Enthusiast | DiLi Founder - Building intelligent solutions for Africa and beyond" } = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta name="author" content="Yahaya Minkail Ibrahim" />
+    <meta name="keywords" content="AI, Machine Learning, Data Science, AgriTech, Nigeria, DiLi, Computational Research" />
+    <meta name="theme-color" content="#16a43a">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:creator" content="@0fficialDiLi" />
+    
+    <title>{title}</title>
+    
+    <style is:global>
+      body { 
+        background-color: #f9f7f1; 
+        color: #022c22;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      }
+      
+      html {
+        scroll-behavior: smooth;
+      }
+      
+      /* Custom scrollbar */
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+      
+      ::-webkit-scrollbar-track {
+        background: #f9f7f1;
+      }
+      
+      ::-webkit-scrollbar-thumb {
+        background: #c8b273;
+        border-radius: 5px;
+      }
+      
+      ::-webkit-scrollbar-thumb:hover {
+        background: #a68a44;
+      }
+    </style>
+  </head>
+  <body class="selection:bg-golden selection:text-emerald-900">
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-emerald-900 shadow-lg">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 py-4">
+        <div class="flex justify-between items-center">
+          <a href="/" class="text-xl sm:text-2xl font-bold text-golden hover:text-golden-dark transition-colors">
+            OfficialDiLi
+          </a>
+          
+          <!-- Desktop Navigation -->
+          <div class="hidden md:flex gap-4 lg:gap-6 items-center">
+            <a href="/#about" class="text-offwhite hover:text-golden transition-colors font-semibold text-sm lg:text-base">
+              About
+            </a>
+            <a href="/techstack" class="text-offwhite hover:text-golden transition-colors font-semibold text-sm lg:text-base">
+              Tech Stack
+            </a>
+            <a href="/#projects" class="text-offwhite hover:text-golden transition-colors font-semibold text-sm lg:text-base">
+              Projects
+            </a>
+            <a href="/#contact" class="text-offwhite hover:text-golden transition-colors font-semibold text-sm lg:text-base">
+              Contact
+            </a>
+            <a href="https://github.com/OfficialDiLi" target="_blank" rel="noopener noreferrer"
+               class="px-3 lg:px-4 py-2 bg-golden text-emerald-900 rounded-lg hover:bg-golden-dark transition-colors font-semibold text-sm lg:text-base">
+              GitHub
+            </a>
+          </div>
+
+          <!-- Mobile Menu Button -->
+          <button id="mobile-menu-button" class="md:hidden text-offwhite hover:text-golden transition-colors p-2">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+              <path id="close-icon" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
+          <div class="flex flex-col gap-3">
+            <a href="/#about" class="text-offwhite hover:text-golden transition-colors font-semibold py-2 border-b border-emerald-700">
+              About
+            </a>
+            <a href="/techstack" class="text-offwhite hover:text-golden transition-colors font-semibold py-2 border-b border-emerald-700">
+              Tech Stack
+            </a>
+            <a href="/#projects" class="text-offwhite hover:text-golden transition-colors font-semibold py-2 border-b border-emerald-700">
+              Projects
+            </a>
+            <a href="/#contact" class="text-offwhite hover:text-golden transition-colors font-semibold py-2 border-b border-emerald-700">
+              Contact
+            </a>
+            <a href="https://github.com/OfficialDiLi" target="_blank" rel="noopener noreferrer"
+               class="px-4 py-2 bg-golden text-emerald-900 rounded-lg hover:bg-golden-dark transition-colors font-semibold text-center mt-2">
+              GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <script>
+      // Mobile menu toggle
+      const menuButton = document.getElementById('mobile-menu-button');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const menuIcon = document.getElementById('menu-icon');
+      const closeIcon = document.getElementById('close-icon');
+
+      menuButton?.addEventListener('click', () => {
+        mobileMenu?.classList.toggle('hidden');
+        menuIcon?.classList.toggle('hidden');
+        closeIcon?.classList.toggle('hidden');
+      });
+
+      // Close mobile menu when clicking on a link
+      const mobileLinks = mobileMenu?.querySelectorAll('a');
+      mobileLinks?.forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu?.classList.add('hidden');
+          menuIcon?.classList.remove('hidden');
+          closeIcon?.classList.add('hidden');
+        });
+      });
+    </script>
+
+    <slot />
+
+    <!-- Footer -->
+    <footer class="bg-emerald-900 text-offwhite py-8">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+          <div class="text-center md:text-left">
+            <p class="text-golden font-bold text-lg sm:text-xl mb-2">Yahaya Minkail Ibrahim</p>
+            <p class="text-xs sm:text-sm">Building the future, one line of code at a time 🚀</p>
+          </div>
+          
+          <div class="flex flex-wrap justify-center gap-3 sm:gap-4 text-sm">
+            <a href="https://github.com/OfficialDiLi" target="_blank" rel="noopener noreferrer"
+               class="hover:text-golden transition-colors">
+              GitHub
+            </a>
+            <a href="https://x.com/0fficialDiLi" target="_blank" rel="noopener noreferrer"
+               class="hover:text-golden transition-colors">
+              Twitter/X
+            </a>
+            <a href="https://linkedin.com/in/YOUR-LINKEDIN-USERNAME" target="_blank" rel="noopener noreferrer"
+               class="hover:text-golden transition-colors">
+              LinkedIn
+            </a>
+          </div>
+        </div>
+        
+        <div class="mt-6 pt-6 border-t border-emerald-700 text-center text-xs sm:text-sm">
+          <p>© {new Date().getFullYear()} Yahaya Minkail Ibrahim. All rights reserved.</p>
+          <p class="text-golden mt-2">✨ DiLi is rising. The world is waiting.</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
