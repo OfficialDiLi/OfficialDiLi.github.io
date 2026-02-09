@@ -7,7 +7,7 @@ export default {
       colors: {
         // Luxury Emerald & Gold Palette
         emerald: {
-          900: '#0A5D31', // Deep Background
+          900: '#022c22', // Deep Background
           700: '#064e3b', // Hover state
           500: '#10b981', // Main Accent
         },
