@@ -85,6 +85,7 @@ import Layout from '../layouts/Layout.astro';
         </div>
       </div>
 
+      
       <!-- Simplified Typing Script -->
       <script>
         document.addEventListener('DOMContentLoaded', () => {
@@ -101,6 +102,9 @@ import Layout from '../layouts/Layout.astro';
           let isDeleting = false;
           
           function type() {
+            // SAFETY CHECK: Prevents errors if element is missing
+            if (!textElement) return;
+
             const currentText = texts[textIndex];
             let typingSpeed = isDeleting ? 50 : 100;
             
