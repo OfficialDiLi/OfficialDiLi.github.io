@@ -4,194 +4,270 @@ import Layout from '../layouts/Layout.astro';
 <Layout title="Yahaya Minkail Ibrahim | AI Researcher & DiLi Founder">
   <main>
     <!-- Hero Section -->
-    <section class="min-h-screen flex items-center justify-center">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6 py-12 sm:py-16 lg:py-20">
-        <div class="text-center mb-8 sm:mb-12">
-          <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-emerald-900 mb-4 sm:mb-6 leading-tight">
-            Hi there, I'm <span class="text-golden-dark">Yahaya Minkail Ibrahim</span> 👋
-          </h1>
-          <p class="text-lg sm:text-xl md:text-2xl text-emerald-700 mb-3 sm:mb-4 px-4">
-            Aspiring Computational Researcher | AI Enthusiast | Youth & Practical Education Advocate
-          </p>
-          <p class="text-base sm:text-lg md:text-xl text-emerald-600 px-4">
-            Proudly Nigerian 🇳🇬
-          </p>
-          <p class="text-sm sm:text-base md:text-lg text-emerald-500 mt-4 sm:mt-6 italic px-4">
-            Building with Purpose • Learning with Passion • Dreaming Beyond Borders
-          </p>
-        </div>
+    <section class="min-h-screen flex items-center justify-center bg-gradient-to-br from-offwhite to-emerald-50/50 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 w-full">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          
+          <!-- Right Side - Profile Picture (Now First on Mobile) -->
+          <!-- IMAGE SIZE INCREASED HERE -->
+          <div class="flex justify-center lg:justify-end order-1 lg:order-2 animate-fade-in-up" style="animation-delay: 0.3s;">
+            <div class="relative group">
+              <div class="absolute -inset-2 bg-gradient-to-r from-golden to-emerald-500 rounded-full opacity-20 blur-2xl group-hover:opacity-40 transition-opacity duration-500"></div>
+              
+              <!-- Updated Size Classes: w-72, sm:w-96, lg:w-[28rem] -->
+              <div class="relative w-72 h-72 sm:w-96 sm:h-96 lg:w-[28rem] lg:h-[28rem] rounded-full overflow-hidden border-4 border-golden shadow-2xl transform group-hover:scale-105 transition-transform duration-500">
+                <img 
+                  src="/profile.jpg" 
+                  alt="Yahaya Minkail Ibrahim"
+                  class="w-full h-full object-cover"
+                  onerror="this.onerror=null; this.src='https://api.dicebear.com/7.x/avataaars/svg?seed=Yahaya&backgroundColor=10b981'"
+                />
+              </div>
+              
+              <div class="absolute -bottom-2 -right-2 bg-white px-4 py-2 rounded-full shadow-lg border border-emerald-100">
+                <span class="font-bold text-emerald-900 text-sm">DiLi 🚀</span>
+              </div>
+            </div>
+          </div>
 
-        <!-- Quick Links -->
-        <div class="flex flex-wrap justify-center gap-3 sm:gap-4 px-4">
-          <a href="#vision" 
-             class="px-6 sm:px-8 py-2 sm:py-3 bg-emerald-900 text-offwhite rounded-lg hover:bg-golden hover:text-emerald-900 transition-all duration-300 font-semibold text-sm sm:text-base">
-            Vision
-          </a>
-          <a href="#projects" 
-             class="px-6 sm:px-8 py-2 sm:py-3 border-2 border-golden text-golden font-semibold rounded-lg hover:bg-golden hover:text-emerald-900 transition-all duration-300 text-sm sm:text-base">
-             Projects
-          </a>
-          <a href="#contact" 
-             class="px-6 sm:px-8 py-2 sm:py-3 border-2 border-emerald-900 text-emerald-900 font-semibold rounded-lg hover:bg-emerald-900 hover:text-offwhite transition-all duration-300 text-sm sm:text-base">
-             Let's Connect
-          </a>
-        </div>
+          <!-- Left Side - Text Content (Now Second on Mobile) -->
+          <div class="text-center lg:text-left space-y-6 order-2 lg:order-1">
+            <!-- Greeting -->
+            <div class="animate-fade-in-up">
+              <p class="text-lg text-emerald-600 font-semibold mb-2">Hello, I'm</p>
+              <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-emerald-900 leading-tight mb-4">
+                Yahaya Minkail Ibrahim
+              </h1>
+            </div>
 
-        <!-- Scroll Indicator -->
-        <!-- <div class="mt-12 sm:mt-16 text-center animate-bounce">
-          <svg class="w-6 h-6 sm:w-8 sm:h-8 mx-auto text-emerald-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-          </svg>
-        </div> -->
+            <!-- Single Clean Typing Effect -->
+            <div class="animate-fade-in-up h-12" style="animation-delay: 0.2s;">
+              <p class="text-xl sm:text-2xl text-emerald-700 font-medium">
+                <span id="typing-text" class="border-r-2 border-golden pr-1"></span>
+              </p>
+            </div>
+
+            <!-- Bio -->
+            <div class="animate-fade-in-up" style="animation-delay: 0.4s;">
+              <p class="text-lg text-emerald-600 max-w-xl mx-auto lg:mx-0 mb-6">
+                Founder of <strong class="text-golden">DiLi</strong>. Bridging the gap between physical living and digital intelligence through AI, Agriculture, and Indigenous Language Technology.
+              </p>
+            </div>
+
+            <!-- CTA Buttons -->
+            <div class="flex flex-wrap justify-center lg:justify-start gap-4 animate-fade-in-up" style="animation-delay: 0.6s;">
+              <a href="#vision" 
+                 class="px-8 py-3 bg-emerald-900 text-offwhite rounded-lg hover:bg-golden hover:text-emerald-900 transition-all duration-300 font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                 Discover DiLi
+              </a>
+              <a href="#contact" 
+                 class="px-8 py-3 border-2 border-emerald-900 text-emerald-900 font-semibold rounded-lg hover:bg-emerald-900 hover:text-offwhite transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                 Get In Touch
+              </a>
+            </div>
+
+            <!-- Social Links -->
+            <div class="flex justify-center lg:justify-start gap-6 pt-4 animate-fade-in-up" style="animation-delay: 0.8s;">
+              <a href="https://github.com/OfficialDiLi" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="transform hover:scale-110 transition-transform">
+                <svg class="w-6 h-6 text-emerald-900 hover:text-golden transition-colors" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                </svg>
+              </a>
+              <a href="https://x.com/0fficialDiLi" target="_blank" rel="noopener noreferrer" aria-label="X Twitter" class="transform hover:scale-110 transition-transform">
+                <img src="https://i.icoziv.workers.dev/icons?i=x-dark" alt="X" class="w-6 h-6 opacity-70 hover:opacity-100 transition-opacity" />
+              </a>
+              <!-- IMPORTANT: Replace the href below with your actual LinkedIn URL -->
+              <a href="https://linkedin.com/in/YOUR-LINKEDIN-USERNAME" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="transform hover:scale-110 transition-transform">
+                <img src="https://i.icoziv.workers.dev/icons?i=linkedin" alt="LinkedIn" class="w-6 h-6 opacity-70 hover:opacity-100 transition-opacity" />
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
+
+      <!-- Simplified Typing Script -->
+      <script>
+        document.addEventListener('DOMContentLoaded', () => {
+          const textElement = document.getElementById('typing-text');
+          const texts = [
+            'AI Researcher & Innovator',
+            'Founder of DiLi',
+            'Computational Scientist',
+            'Advocate for African NLP'
+          ];
+          
+          let textIndex = 0;
+          let charIndex = 0;
+          let isDeleting = false;
+          
+          function type() {
+            const currentText = texts[textIndex];
+            let typingSpeed = isDeleting ? 50 : 100;
+            
+            if (!isDeleting) {
+              textElement.textContent = currentText.substring(0, charIndex + 1);
+              charIndex++;
+              if (charIndex === currentText.length) {
+                typingSpeed = 2000; // Pause at end
+                isDeleting = true;
+              }
+            } else {
+              textElement.textContent = currentText.substring(0, charIndex - 1);
+              charIndex--;
+              if (charIndex === 0) {
+                isDeleting = false;
+                textIndex = (textIndex + 1) % texts.length;
+                typingSpeed = 500; // Pause before new word
+              }
+            }
+            
+            setTimeout(type, typingSpeed);
+          }
+          
+          type();
+        });
+      </script>
     </section>
 
     <!-- DiLi Vision Section -->
-    <section id="vision" class="min-h-screen bg-emerald-900 text-offwhite flex items-center justify-center">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
-        <div class="text-center mb-8 sm:mb-12">
-          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 leading-tight">
+    <section id="vision" class="py-24 bg-emerald-900 text-offwhite">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl sm:text-4xl font-bold mb-6">
             💡 DiLi — <span class="text-golden">Smarter Living Phygitally</span>
           </h2>
-          <p class="text-base sm:text-lg lg:text-xl mb-6 sm:mb-8 max-w-4xl mx-auto leading-relaxed px-4">
-            "To harmonize life with intelligent technology — for smarter homes, farms, empowered individuals, businesses and digitally literate communities across Africa and beyond."
+          <p class="text-lg sm:text-xl max-w-3xl mx-auto leading-relaxed opacity-90">
+            Harmonizing life with intelligent technology — for smarter homes, farms, and digitally literate communities across Africa.
           </p>
         </div>
 
-        <div class="grid md:grid-cols-2 gap-6 sm:gap-8 mb-8">
-          <div class="bg-emerald-800 rounded-lg p-6 sm:p-8">
-            <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-golden">🎯 Mission</h3>
-            <p class="text-sm sm:text-base lg:text-lg leading-relaxed">
-              Build tools, platforms, and communities that merge <strong>physical living with digital intelligence</strong> — <em>Phygitally</em>.
+        <div class="grid md:grid-cols-2 gap-8 mb-12">
+          <div class="bg-emerald-800/50 rounded-xl p-8 border border-emerald-700 hover:border-golden transition-colors">
+            <h3 class="text-xl font-bold mb-4 text-golden">🎯 Mission</h3>
+            <p class="text-base leading-relaxed opacity-90">
+              Build tools, platforms, and communities that merge <strong>physical living with digital intelligence</strong>.
             </p>
           </div>
 
-          <div class="bg-emerald-800 rounded-lg p-6 sm:p-8">
-            <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-golden">🔬 Focus Areas</h3>
-            <ul class="space-y-2 text-sm sm:text-base lg:text-lg">
+          <div class="bg-emerald-800/50 rounded-xl p-8 border border-emerald-700 hover:border-golden transition-colors">
+            <h3 class="text-xl font-bold mb-4 text-golden">🔬 Focus Areas</h3>
+            <ul class="space-y-2 text-base opacity-90">
               <li>🌾 Smarter Farming & AgriTech</li>
               <li>🏠 Smart Home Automation</li>
-              <li>📱 Digital Literacy & Access</li>
               <li>🗣️ AI for Indigenous Languages</li>
-              <li>🎓 Tech-Driven Education & Sustainability</li>
+              <li>🎓 Tech-Driven Education</li>
             </ul>
           </div>
-        </div>
-
-        <div class="text-center px-4">
-          <p class="text-base sm:text-lg lg:text-xl italic text-golden">
-            🌀 DiLi is more than a brand — it's a movement to <strong>live smarter, think deeper, and code for change</strong>.
-          </p>
         </div>
       </div>
     </section>
 
     <!-- What I'm Up To Section -->
-    <section class="min-h-screen flex items-center justify-center bg-gradient-to-br from-offwhite to-emerald-50">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
-        <h2 class="text-3xl sm:text-4xl font-bold text-emerald-900 mb-8 sm:mb-12 text-center">🚀 What I'm Up To</h2>
+    <section class="py-24 bg-gradient-to-br from-offwhite to-emerald-50">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <h2 class="text-3xl sm:text-4xl font-bold text-emerald-900 mb-12 text-center">🚀 What I'm Up To</h2>
         
-        <div class="grid sm:grid-cols-2 gap-4 sm:gap-6 mb-6">
-          <div class="border-2 border-emerald-500 rounded-lg p-4 sm:p-6 hover:bg-emerald-50 transition-colors">
-            <h3 class="text-lg sm:text-xl font-bold text-emerald-900 mb-2 sm:mb-3">🔭 Currently working on</h3>
-            <p class="text-sm sm:text-base text-emerald-700">Building foundational AI projects and exploring smart agriculture solutions</p>
+        <div class="grid sm:grid-cols-2 gap-6 mb-8">
+          <div class="bg-white rounded-xl p-8 shadow-lg border border-emerald-100 hover:shadow-xl transition-shadow">
+            <h3 class="text-lg font-bold text-emerald-900 mb-3">🔭 Currently Working On</h3>
+            <p class="text-emerald-700">Building foundational AI projects and exploring smart agriculture solutions.</p>
           </div>
 
-          <div class="border-2 border-emerald-500 rounded-lg p-4 sm:p-6 hover:bg-emerald-50 transition-colors">
-            <h3 class="text-lg sm:text-xl font-bold text-emerald-900 mb-2 sm:mb-3">🌱 Currently learning</h3>
-            <p class="text-sm sm:text-base text-emerald-700">Machine Learning, LLM fine-tuning, and African language NLP</p>
+          <div class="bg-white rounded-xl p-8 shadow-lg border border-emerald-100 hover:shadow-xl transition-shadow">
+            <h3 class="text-lg font-bold text-emerald-900 mb-3">🌱 Currently Learning</h3>
+            <p class="text-emerald-700">Machine Learning, LLM fine-tuning, and African language NLP.</p>
           </div>
 
-          <div class="border-2 border-golden rounded-lg p-4 sm:p-6 hover:bg-golden hover:bg-opacity-10 transition-colors">
-            <h3 class="text-lg sm:text-xl font-bold text-emerald-900 mb-2 sm:mb-3">👯 Looking to collaborate on</h3>
-            <p class="text-sm sm:text-base text-emerald-700">Open-source AI projects, AgriTech innovations, and digital literacy initiatives</p>
+          <div class="bg-white rounded-xl p-8 shadow-lg border border-emerald-100 hover:shadow-xl transition-shadow">
+            <h3 class="text-lg font-bold text-emerald-900 mb-3">👯 Looking to Collaborate On</h3>
+            <p class="text-emerald-700">Open-source AI projects, AgriTech innovations, and digital literacy initiatives.</p>
           </div>
 
-          <div class="border-2 border-golden rounded-lg p-4 sm:p-6 hover:bg-golden hover:bg-opacity-10 transition-colors">
-            <h3 class="text-lg sm:text-xl font-bold text-emerald-900 mb-2 sm:mb-3">💬 Ask me about</h3>
-            <p class="text-sm sm:text-base text-emerald-700">AI for social good, Nigerian tech ecosystem, computational research</p>
+          <div class="bg-white rounded-xl p-8 shadow-lg border border-emerald-100 hover:shadow-xl transition-shadow">
+            <h3 class="text-lg font-bold text-emerald-900 mb-3">💬 Ask Me About</h3>
+            <p class="text-emerald-700">AI for social good, Nigerian tech ecosystem, and computational research.</p>
           </div>
         </div>
 
-        <div class="text-center bg-golden bg-opacity-20 rounded-lg p-4 sm:p-6">
-          <p class="text-base sm:text-lg md:text-xl text-emerald-900">
-            <strong>⚡ Fun fact:</strong> I believe Africa's next revolution will be digital, and I'm here to help build it
+        <div class="text-center bg-golden/10 rounded-xl p-6 border border-golden/30">
+          <p class="text-lg text-emerald-900">
+            <strong>⚡ Fun fact:</strong> I believe Africa's next revolution will be digital, and I'm here to help build it.
           </p>
         </div>
       </div>
     </section>
 
     <!-- AI Journey Section -->
-    <section class="min-h-screen bg-gradient-to-br from-emerald-50 to-golden/10 flex items-center justify-center">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
-        <h2 class="text-3xl sm:text-4xl font-bold text-emerald-900 mb-4 sm:mb-6 text-center">🧠 My AI Journey</h2>
-        <p class="text-base sm:text-lg lg:text-xl text-center text-emerald-700 mb-8 sm:mb-12 max-w-3xl mx-auto">
+    <section class="py-24 bg-gradient-to-br from-emerald-50 to-golden/10">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <h2 class="text-3xl sm:text-4xl font-bold text-emerald-900 mb-6 text-center">🧠 My AI Journey</h2>
+        <p class="text-lg text-center text-emerald-700 mb-12 max-w-3xl mx-auto">
           AI is the <strong>language of tomorrow</strong>, and I approach it with curiosity and purpose.
         </p>
 
-        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-          <div class="bg-white rounded-lg p-4 sm:p-6 shadow-md hover:shadow-xl transition-shadow">
-            <h3 class="text-xl sm:text-2xl font-bold text-emerald-900 mb-2 sm:mb-3">📊 Data Science</h3>
-            <p class="text-sm sm:text-base text-emerald-700">Data analysis, visualization, and insights extraction</p>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="bg-emerald-800 text-offwhite rounded-xl p-6 shadow-md hover:shadow-xl transition-all hover:-translate-y-1 duration-300">
+            <h3 class="text-xl font-bold mb-3">📊 Data Science</h3>
+            <p class="text-sm text-emerald-100">Data analysis, visualization, and insights extraction.</p>
           </div>
 
-          <div class="bg-white rounded-lg p-4 sm:p-6 shadow-md hover:shadow-xl transition-shadow">
-            <h3 class="text-xl sm:text-2xl font-bold text-emerald-900 mb-2 sm:mb-3">🤖 Artificial Intelligence</h3>
-            <p class="text-sm sm:text-base text-emerald-700">ML, LLMs, fine-tuning, applied AI</p>
+          <div class="bg-emerald-800 text-offwhite rounded-xl p-6 shadow-md hover:shadow-xl transition-all hover:-translate-y-1 duration-300">
+            <h3 class="text-xl font-bold mb-3">🤖 Artificial Intelligence</h3>
+            <p class="text-sm text-emerald-100">ML, LLMs, fine-tuning, and applied AI models.</p>
           </div>
 
-          <div class="bg-white rounded-lg p-4 sm:p-6 shadow-md hover:shadow-xl transition-shadow">
-            <h3 class="text-xl sm:text-2xl font-bold text-emerald-900 mb-2 sm:mb-3">🌍 Multilingual NLP</h3>
-            <p class="text-sm sm:text-base text-emerald-700">African Indigenous Language technologies</p>
+          <div class="bg-emerald-800 text-offwhite rounded-xl p-6 shadow-md hover:shadow-xl transition-all hover:-translate-y-1 duration-300">
+            <h3 class="text-xl font-bold mb-3">🌍 Multilingual NLP</h3>
+            <p class="text-sm text-emerald-100">African Indigenous Language technologies.</p>
           </div>
 
-          <div class="bg-white rounded-lg p-4 sm:p-6 shadow-md hover:shadow-xl transition-shadow">
-            <h3 class="text-xl sm:text-2xl font-bold text-emerald-900 mb-2 sm:mb-3">🧠 Ethical AI</h3>
-            <p class="text-sm sm:text-base text-emerald-700">Fairness, transparency, responsible data practices</p>
+          <div class="bg-emerald-800 text-offwhite rounded-xl p-6 shadow-md hover:shadow-xl transition-all hover:-translate-y-1 duration-300">
+            <h3 class="text-xl font-bold mb-3">🧠 Ethical AI</h3>
+            <p class="text-sm text-emerald-100">Fairness, transparency, and responsible data practices.</p>
           </div>
 
-          <div class="bg-white rounded-lg p-4 sm:p-6 shadow-md hover:shadow-xl transition-shadow">
-            <h3 class="text-xl sm:text-2xl font-bold text-emerald-900 mb-2 sm:mb-3">🌾 AgriTech</h3>
-            <p class="text-sm sm:text-base text-emerald-700">Empowering agriculture with AI-driven solutions</p>
+          <div class="bg-emerald-800 text-offwhite rounded-xl p-6 shadow-md hover:shadow-xl transition-all hover:-translate-y-1 duration-300">
+            <h3 class="text-xl font-bold mb-3">🌾 AgriTech</h3>
+            <p class="text-sm text-emerald-100">Empowering agriculture with AI-driven solutions.</p>
           </div>
 
-          <div class="bg-gradient-to-br from-golden to-golden-dark rounded-lg p-4 sm:p-6 shadow-md hover:shadow-xl transition-shadow text-emerald-900">
-            <h3 class="text-xl sm:text-2xl font-bold mb-2 sm:mb-3">🚀 Innovation</h3>
-            <p class="text-sm sm:text-base font-semibold">Building the future, one model at a time</p>
+          <div class="bg-gradient-to-br from-golden to-yellow-600 text-emerald-900 rounded-xl p-6 shadow-md hover:shadow-xl transition-all hover:-translate-y-1 duration-300">
+            <h3 class="text-xl font-bold mb-3">🚀 Innovation</h3>
+            <p class="text-sm font-semibold">Building the future, one model at a time.</p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- About Me Section -->
-    <section id="about" class="min-h-screen flex items-center justify-center">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
-        <h2 class="text-3xl sm:text-4xl font-bold text-emerald-900 mb-8 sm:mb-12 text-center">🌟 About Me</h2>
+    <section id="about" class="py-24 bg-offwhite">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <h2 class="text-3xl sm:text-4xl font-bold text-emerald-900 mb-12 text-center">🌟 About Me</h2>
         
-        <div class="grid md:grid-cols-2 gap-6 sm:gap-8">
-          <div class="space-y-4 sm:space-y-6">
-            <div class="flex items-start gap-3 sm:gap-4">
-              <span class="text-2xl sm:text-3xl">🎓</span>
-              <p class="text-base sm:text-lg text-emerald-700">Building a solid foundation in Computational Science & Engineering</p>
+        <div class="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+          <div class="space-y-6">
+            <div class="flex items-start gap-4">
+              <span class="text-3xl">🎓</span>
+              <p class="text-lg text-emerald-700">Building a solid foundation in Computational Science & Engineering.</p>
             </div>
-            <div class="flex items-start gap-3 sm:gap-4">
-              <span class="text-2xl sm:text-3xl">🌍</span>
-              <p class="text-base sm:text-lg text-emerald-700">Exploring the intersection of computing, culture, and community</p>
+            <div class="flex items-start gap-4">
+              <span class="text-3xl">🌍</span>
+              <p class="text-lg text-emerald-700">Exploring the intersection of computing, culture, and community.</p>
             </div>
-            <div class="flex items-start gap-3 sm:gap-4">
-              <span class="text-2xl sm:text-3xl">💡</span>
-              <p class="text-base sm:text-lg text-emerald-700">Passionate about creating solutions that uplift and empower</p>
+            <div class="flex items-start gap-4">
+              <span class="text-3xl">💡</span>
+              <p class="text-lg text-emerald-700">Passionate about creating solutions that uplift and empower.</p>
             </div>
           </div>
 
-          <div class="space-y-4 sm:space-y-6">
-            <div class="flex items-start gap-3 sm:gap-4">
-              <span class="text-2xl sm:text-3xl">🇳🇬</span>
-              <p class="text-base sm:text-lg text-emerald-700">Committed to advancing Nigeria's tech ecosystem</p>
+          <div class="space-y-6">
+            <div class="flex items-start gap-4">
+              <span class="text-3xl">🇳🇬</span>
+              <p class="text-lg text-emerald-700">Committed to advancing Nigeria's tech ecosystem.</p>
             </div>
-            <div class="flex items-start gap-3 sm:gap-4">
-              <span class="text-2xl sm:text-3xl">📚</span>
-              <p class="text-base sm:text-lg text-emerald-700">Continuous learner, always curious about emerging technologies</p>
+            <div class="flex items-start gap-4">
+              <span class="text-3xl">📚</span>
+              <p class="text-lg text-emerald-700">Continuous learner, always curious about emerging technologies.</p>
             </div>
           </div>
         </div>
@@ -199,133 +275,116 @@ import Layout from '../layouts/Layout.astro';
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="min-h-screen bg-emerald-900 text-offwhite flex items-center justify-center">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
-        <h2 class="text-3xl sm:text-4xl font-bold mb-8 sm:mb-12 text-center">💼 Featured Projects</h2>
+    <section id="projects" class="py-24 bg-emerald-900 text-offwhite">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4 text-center">💼 Current Focus</h2>
+        <p class="text-center text-emerald-100 mb-12 max-w-2xl mx-auto">I am currently deep in the research and development phase for several key initiatives.</p>
         
-        <div class="bg-emerald-800 rounded-lg p-6 sm:p-8 lg:p-12 text-center max-w-4xl mx-auto">
-          <p class="text-xl sm:text-2xl mb-6 sm:mb-8">
-            🚧 <strong>Projects coming soon!</strong>
-          </p>
-          <p class="text-base sm:text-lg lg:text-xl mb-6 sm:mb-8 text-golden">
-            I'm currently building foundational work that will showcase:
-          </p>
-          <div class="grid sm:grid-cols-2 gap-3 sm:gap-4 max-w-2xl mx-auto text-left">
-            <div class="flex items-center gap-3">
-              <span class="text-golden text-xl">→</span>
-              <span class="text-sm sm:text-base">DiLi Smart Living Platform concepts</span>
-            </div>
-            <div class="flex items-center gap-3">
-              <span class="text-golden text-xl">→</span>
-              <span class="text-sm sm:text-base">AI models for agricultural optimization</span>
-            </div>
-            <div class="flex items-center gap-3">
-              <span class="text-golden text-xl">→</span>
-              <span class="text-sm sm:text-base">NLP tools for Nigerian languages</span>
-            </div>
-            <div class="flex items-center gap-3">
-              <span class="text-golden text-xl">→</span>
-              <span class="text-sm sm:text-base">Educational tech resources</span>
-            </div>
+        <div class="grid sm:grid-cols-2 gap-6 mb-12">
+          <div class="bg-emerald-800/50 rounded-xl p-6 border border-emerald-700 hover:border-golden transition-colors">
+            <h3 class="text-lg font-bold mb-2">🔭 Foundational AI Research</h3>
+            <p class="text-sm text-emerald-100">Developing core models and understanding the mathematics behind modern Machine Learning.</p>
           </div>
-          <p class="text-base sm:text-lg mt-6 sm:mt-8 text-golden">
-            🔗 <em>Stay tuned as I add my first repositories</em>
-          </p>
+
+          <div class="bg-emerald-800/50 rounded-xl p-6 border border-emerald-700 hover:border-golden transition-colors">
+            <h3 class="text-lg font-bold mb-2">🗣️ African Language NLP</h3>
+            <p class="text-sm text-emerald-100">Exploring Natural Language Processing tools for Nigerian languages to bridge the digital divide.</p>
+          </div>
+
+          <div class="bg-emerald-800/50 rounded-xl p-6 border border-emerald-700 hover:border-golden transition-colors">
+            <h3 class="text-lg font-bold mb-2">🌾 AgriTech Solutions</h3>
+            <p class="text-sm text-emerald-100">Conceptualizing smart farming tools to optimize yield and resource management.</p>
+          </div>
+
+          <div class="bg-emerald-800/50 rounded-xl p-6 border border-emerald-700 hover:border-golden transition-colors">
+            <h3 class="text-lg font-bold mb-2">📚 Digital Literacy</h3>
+            <p class="text-sm text-emerald-100">Creating educational content to empower youth in the Nigerian tech ecosystem.</p>
+          </div>
         </div>
 
-        <div class="mt-8 text-center">
+        <div class="text-center">
           <a href="https://github.com/OfficialDiLi" 
-             class="inline-block px-6 sm:px-8 py-2 sm:py-3 bg-golden text-emerald-900 rounded-lg hover:bg-golden-dark transition-colors duration-300 font-semibold text-sm sm:text-base">
-             View My GitHub Profile
+             class="inline-block px-8 py-3 bg-golden text-emerald-900 rounded-lg hover:bg-golden-dark transition-colors font-semibold">
+             Follow Progress on GitHub
           </a>
         </div>
       </div>
     </section>
 
     <!-- Beyond Code Section -->
-    <section class="min-h-screen flex items-center justify-center bg-gradient-to-br from-offwhite to-emerald-50">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
-        <h2 class="text-3xl sm:text-4xl font-bold text-emerald-900 mb-8 sm:mb-12 text-center">📚 Beyond Code</h2>
-        <p class="text-base sm:text-lg lg:text-xl text-center text-emerald-700 mb-8 sm:mb-12">When I'm not coding, I explore:</p>
+    <section class="py-24 bg-gradient-to-br from-offwhite to-emerald-50">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <h2 class="text-3xl sm:text-4xl font-bold text-emerald-900 mb-12 text-center">📚 Beyond Code</h2>
+        <p class="text-center text-emerald-700 mb-12">When I'm not coding, I explore:</p>
 
-        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-          <div class="border-l-4 border-golden pl-4 sm:pl-6">
-            <h3 class="text-lg sm:text-xl font-bold text-emerald-900 mb-2">🧠 Tech Research & Trends</h3>
-            <p class="text-sm sm:text-base text-emerald-700">Staying ahead of emerging technologies</p>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-4xl mx-auto">
+          <div class="border-l-4 border-golden pl-6">
+            <h3 class="text-lg font-bold text-emerald-900 mb-2">🧠 Tech Research</h3>
+            <p class="text-sm text-emerald-700">Staying ahead of emerging technologies.</p>
           </div>
 
-          <div class="border-l-4 border-golden pl-4 sm:pl-6">
-            <h3 class="text-lg sm:text-xl font-bold text-emerald-900 mb-2">🌾 Agricultural Activities</h3>
-            <p class="text-sm sm:text-base text-emerald-700">Understanding the problems I'm solving</p>
+          <div class="border-l-4 border-golden pl-6">
+            <h3 class="text-lg font-bold text-emerald-900 mb-2">🌾 Agriculture</h3>
+            <p class="text-sm text-emerald-700">Understanding the problems I'm solving.</p>
           </div>
 
-          <div class="border-l-4 border-golden pl-4 sm:pl-6">
-            <h3 class="text-lg sm:text-xl font-bold text-emerald-900 mb-2">💸 Financial & Entrepreneurial Literacy</h3>
-            <p class="text-sm sm:text-base text-emerald-700">Building sustainable ventures</p>
+          <div class="border-l-4 border-golden pl-6">
+            <h3 class="text-lg font-bold text-emerald-900 mb-2">💸 Finance</h3>
+            <p class="text-sm text-emerald-700">Building sustainable ventures.</p>
           </div>
 
-          <div class="border-l-4 border-emerald-500 pl-4 sm:pl-6">
-            <h3 class="text-lg sm:text-xl font-bold text-emerald-900 mb-2">🗣️ Communication & Negotiation</h3>
-            <p class="text-sm sm:text-base text-emerald-700">Connecting ideas to impact</p>
+          <div class="border-l-4 border-emerald-500 pl-6">
+            <h3 class="text-lg font-bold text-emerald-900 mb-2">🗣️ Communication</h3>
+            <p class="text-sm text-emerald-700">Connecting ideas to impact.</p>
           </div>
 
-          <div class="border-l-4 border-emerald-500 pl-4 sm:pl-6">
-            <h3 class="text-lg sm:text-xl font-bold text-emerald-900 mb-2">📖 Biographies</h3>
-            <p class="text-sm sm:text-base text-emerald-700">Learning from builders and innovators who came before</p>
+          <div class="border-l-4 border-emerald-500 pl-6">
+            <h3 class="text-lg font-bold text-emerald-900 mb-2">📖 Biographies</h3>
+            <p class="text-sm text-emerald-700">Learning from builders who came before.</p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="min-h-screen bg-gradient-to-br from-emerald-900 to-emerald-800 text-offwhite flex items-center justify-center">
-      <div class="max-w-4xl mx-auto px-4 sm:px-6 py-12 sm:py-16 text-center">
-        <h2 class="text-3xl sm:text-4xl font-bold mb-6 sm:mb-8">🌐 Let's Connect</h2>
-        <p class="text-base sm:text-lg lg:text-xl mb-8 sm:mb-12">I'm always open to collaboration, mentorship, and meaningful conversations</p>
+    <section id="contact" class="py-24 bg-emerald-900 text-offwhite">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-6">🌐 Let's Connect</h2>
+        <p class="text-lg mb-12 opacity-90">I'm always open to collaboration, mentorship, and meaningful conversations.</p>
 
-        <div class="flex flex-wrap justify-center gap-4 sm:gap-6 mb-8 sm:mb-12">
-          <a href="https://facebook.com/minkailyahayaibrahim" target="_blank" rel="noopener noreferrer"
-             class="transform hover:scale-110 transition-transform">
-            <img src="https://i.icoziv.workers.dev/icons?i=facebook" alt="Facebook" class="w-10 h-10 sm:w-12 sm:h-12" />
+        <div class="flex flex-wrap justify-center gap-6 mb-12">
+          <a href="https://facebook.com/minkailyahayaibrahim" target="_blank" rel="noopener noreferrer" class="transform hover:scale-110 transition-transform opacity-80 hover:opacity-100">
+            <img src="https://i.icoziv.workers.dev/icons?i=facebook" alt="Facebook" class="w-10 h-10" />
           </a>
-          <a href="https://x.com/0fficialDiLi" target="_blank" rel="noopener noreferrer"
-             class="transform hover:scale-110 transition-transform">
-            <img src="https://i.icoziv.workers.dev/icons?i=x-dark" alt="X (Twitter)" class="w-10 h-10 sm:w-12 sm:h-12" />
+          <a href="https://x.com/0fficialDiLi" target="_blank" rel="noopener noreferrer" class="transform hover:scale-110 transition-transform opacity-80 hover:opacity-100">
+            <img src="https://i.icoziv.workers.dev/icons?i=x-dark" alt="X" class="w-10 h-10" />
           </a>
-          <a href="https://instagram.com/minkailyahayaibrahim" target="_blank" rel="noopener noreferrer"
-             class="transform hover:scale-110 transition-transform">
-            <img src="https://i.icoziv.workers.dev/icons?i=instagram" alt="Instagram" class="w-10 h-10 sm:w-12 sm:h-12" />
+          <a href="https://instagram.com/minkailyahayaibrahim" target="_blank" rel="noopener noreferrer" class="transform hover:scale-110 transition-transform opacity-80 hover:opacity-100">
+            <img src="https://i.icoziv.workers.dev/icons?i=instagram" alt="Instagram" class="w-10 h-10" />
           </a>
-          <a href="https://t.me/MinkailYahaya" target="_blank" rel="noopener noreferrer"
-             class="transform hover:scale-110 transition-transform">
-            <img src="https://i.icoziv.workers.dev/icons?i=telegram" alt="Telegram" class="w-10 h-10 sm:w-12 sm:h-12" />
+          <a href="https://t.me/MinkailYahaya" target="_blank" rel="noopener noreferrer" class="transform hover:scale-110 transition-transform opacity-80 hover:opacity-100">
+            <img src="https://i.icoziv.workers.dev/icons?i=telegram" alt="Telegram" class="w-10 h-10" />
           </a>
-          <a href="https://reddit.com/u/Yahayaminkail" target="_blank" rel="noopener noreferrer"
-             class="transform hover:scale-110 transition-transform">
-            <img src="https://i.icoziv.workers.dev/icons?i=reddit" alt="Reddit" class="w-10 h-10 sm:w-12 sm:h-12" />
+          <a href="https://reddit.com/u/Yahayaminkail" target="_blank" rel="noopener noreferrer" class="transform hover:scale-110 transition-transform opacity-80 hover:opacity-100">
+            <img src="https://i.icoziv.workers.dev/icons?i=reddit" alt="Reddit" class="w-10 h-10" />
           </a>
-          <a href="https://linkedin.com/in/YOUR-LINKEDIN-USERNAME" target="_blank" rel="noopener noreferrer"
-             class="transform hover:scale-110 transition-transform">
-            <img src="https://i.icoziv.workers.dev/icons?i=linkedin" alt="LinkedIn" class="w-10 h-10 sm:w-12 sm:h-12" />
+          <!-- Remember to update this link -->
+          <a href="https://linkedin.com/in/YOUR-LINKEDIN-USERNAME" target="_blank" rel="noopener noreferrer" class="transform hover:scale-110 transition-transform opacity-80 hover:opacity-100">
+            <img src="https://i.icoziv.workers.dev/icons?i=linkedin" alt="LinkedIn" class="w-10 h-10" />
           </a>
         </div>
 
-        <div class="mb-8 sm:mb-12">
-          <a href="mailto:minkailibrahimyahya@gmail.com" 
-             class="text-base sm:text-lg md:text-xl lg:text-2xl text-golden hover:text-golden-dark transition-colors break-all">
-             📧 minkailibrahimyahya@gmail.com
-          </a>
-        </div>
+        <a href="mailto:minkailibrahimyahya@gmail.com" 
+           class="text-2xl sm:text-3xl text-golden hover:text-golden-dark transition-colors font-semibold mb-12 block break-all">
+           📧 minkailibrahimyahya@gmail.com
+        </a>
 
-        <div class="border-t border-golden pt-8 sm:pt-12 mt-8 sm:mt-12">
-          <p class="text-sm sm:text-base md:text-lg lg:text-xl mb-4 sm:mb-6 leading-relaxed px-4">
-            Thank you for stopping by. I believe that technology is most powerful when it serves humanity.
+        <div class="border-t border-emerald-700 pt-12 mt-12">
+          <p class="text-sm opacity-75 mb-4">
+            Thank you for stopping by. I believe technology is most powerful when it serves humanity.
           </p>
-          <p class="text-sm sm:text-base md:text-lg mb-4 sm:mb-6 px-4">
-            Whether you're here to collaborate, learn, or simply explore — welcome to my journey.
-          </p>
-          <p class="text-lg sm:text-xl lg:text-2xl text-golden italic px-4">
-            ✨ The world is waiting. DiLi is rising. I am Yahaya.
+          <p class="text-sm opacity-75">
+            © {new Date().getFullYear()} Yahaya Minkail Ibrahim. Built with Astro.
           </p>
         </div>
       </div>

@@ -1,113 +1,250 @@
 ---
 import Layout from '../layouts/Layout.astro';
 ---
+
 <Layout title="Tech Stack | Yahaya Minkail Ibrahim">
   <main class="min-h-screen bg-gradient-to-br from-offwhite to-emerald-50">
+    
     <!-- Header -->
-    <section class="bg-emerald-900 text-offwhite py-12 sm:py-16">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    <section class="bg-emerald-900 text-offwhite py-16 sm:py-20 relative overflow-hidden">
+      <!-- Decorative background elements -->
+      <div class="absolute top-0 left-0 w-full h-full opacity-10">
+        <div class="absolute top-10 left-10 w-32 h-32 bg-golden rounded-full blur-3xl"></div>
+        <div class="absolute bottom-10 right-10 w-48 h-48 bg-emerald-500 rounded-full blur-3xl"></div>
+      </div>
+      
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
         <div class="text-center">
-          <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4">🛠️ Tech Stack</h1>
-          <p class="text-lg sm:text-xl text-golden">Technologies I work with and continue to learn</p>
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4">⚙️ Tech Stack</h1>
+          <p class="text-lg sm:text-xl text-golden max-w-2xl mx-auto">
+            The tools, languages, and frameworks I use to bring ideas to life.
+          </p>
         </div>
         
-        <div class="mt-6 sm:mt-8 text-center">
-          <a href="/" class="text-golden hover:text-golden-dark transition-colors text-sm sm:text-base">
-            ← Back to Home
+        <div class="mt-8 text-center">
+          <a href="/" class="inline-flex items-center gap-2 px-6 py-2 border border-golden/50 text-golden rounded-full hover:bg-golden hover:text-emerald-900 transition-all duration-300 text-sm font-semibold">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+            </svg>
+            Back to Home
           </a>
         </div>
       </div>
     </section>
 
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
-      
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-16 sm:py-20">
+
       <!-- Languages & Core Technologies -->
-      <section class="mb-12 sm:mb-16">
-        <h2 class="text-2xl sm:text-3xl font-bold text-emerald-900 text-center mb-6 sm:mb-8">Languages & Core Technologies</h2>
-        <div class="bg-white rounded-lg shadow-lg p-6 sm:p-8">
-          <div class="flex flex-wrap justify-center gap-3 sm:gap-4">
-            <img src="https://skillicons.dev/icons?i=python,go,rust,bash" alt="Core Languages" class="hover:scale-105 transition-transform max-w-full h-auto" />
+      <section class="mb-16">
+        <h2 class="text-2xl sm:text-3xl font-bold text-emerald-900 mb-8 flex items-center gap-3">
+          <span class="bg-emerald-100 p-2 rounded-lg">💻</span>
+          Languages & Core
+        </h2>
+        <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-4">
+          
+          <div class="group flex flex-col items-center gap-2 p-4 bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 border border-transparent hover:border-golden">
+            <img src="https://skillicons.dev/icons?i=python" alt="Python" class="w-12 h-12 sm:w-14 sm:h-14 transition-transform group-hover:scale-110" />
+            <span class="text-xs sm:text-sm font-medium text-emerald-800">Python</span>
           </div>
+
+          <div class="group flex flex-col items-center gap-2 p-4 bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 border border-transparent hover:border-golden">
+            <img src="https://skillicons.dev/icons?i=go" alt="Go" class="w-12 h-12 sm:w-14 sm:h-14 transition-transform group-hover:scale-110" />
+            <span class="text-xs sm:text-sm font-medium text-emerald-800">Go</span>
+          </div>
+
+          <div class="group flex flex-col items-center gap-2 p-4 bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 border border-transparent hover:border-golden">
+            <img src="https://skillicons.dev/icons?i=rust" alt="Rust" class="w-12 h-12 sm:w-14 sm:h-14 transition-transform group-hover:scale-110" />
+            <span class="text-xs sm:text-sm font-medium text-emerald-800">Rust</span>
+          </div>
+
+          <div class="group flex flex-col items-center gap-2 p-4 bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 border border-transparent hover:border-golden">
+            <img src="https://skillicons.dev/icons?i=bash" alt="Bash" class="w-12 h-12 sm:w-14 sm:h-14 transition-transform group-hover:scale-110" />
+            <span class="text-xs sm:text-sm font-medium text-emerald-800">Bash</span>
+          </div>
+
         </div>
       </section>
 
       <!-- AI/ML & Data Science -->
-      <section class="mb-12 sm:mb-16">
-        <h2 class="text-2xl sm:text-3xl font-bold text-emerald-900 text-center mb-6 sm:mb-8">AI/ML & Data Science</h2>
-        <div class="bg-white rounded-lg shadow-lg p-6 sm:p-8">
-          <div class="flex flex-wrap justify-center gap-3 sm:gap-4 mb-4 sm:mb-6">
-            <img src="https://skillicons.dev/icons?i=tensorflow,pytorch,sklearn" alt="ML Frameworks" class="hover:scale-105 transition-transform max-w-full h-auto" />
+      <section class="mb-16">
+        <h2 class="text-2xl sm:text-3xl font-bold text-emerald-900 mb-8 flex items-center gap-3">
+          <span class="bg-emerald-100 p-2 rounded-lg">🧠</span>
+          AI/ML & Data Science
+        </h2>
+        <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-4">
+          
+          <div class="group flex flex-col items-center gap-2 p-4 bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 border border-transparent hover:border-golden">
+            <img src="https://skillicons.dev/icons?i=tensorflow" alt="TensorFlow" class="w-12 h-12 sm:w-14 sm:h-14 transition-transform group-hover:scale-110" />
+            <span class="text-xs sm:text-sm font-medium text-emerald-800">TensorFlow</span>
           </div>
-          <div class="flex flex-wrap justify-center gap-3 sm:gap-4">
-            <img src="https://i.icoziv.workers.dev/icons?i=keras" alt="Keras" title="Keras" class="hover:scale-105 transition-transform" />
-            <img src="https://i.icoziv.workers.dev/icons?i=pandas-dark" alt="Pandas" title="Pandas" class="hover:scale-105 transition-transform" />
-            <img src="https://i.icoziv.workers.dev/icons?i=numpy-dark" alt="NumPy" title="NumPy" class="hover:scale-105 transition-transform" />
-            <img src="https://i.icoziv.workers.dev/icons?i=huggingface" alt="Hugging Face" title="Hugging Face" class="hover:scale-105 transition-transform" />
-            <img src="https://i.icoziv.workers.dev/icons?i=opencv-dark" alt="OpenCV" title="OpenCV" class="hover:scale-105 transition-transform" />
-            <img src="https://i.icoziv.workers.dev/icons?i=manim" alt="Manim" title="Manim" class="hover:scale-105 transition-transform" />
+
+          <div class="group flex flex-col items-center gap-2 p-4 bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 border border-transparent hover:border-golden">
+            <img src="https://skillicons.dev/icons?i=pytorch" alt="PyTorch" class="w-12 h-12 sm:w-14 sm:h-14 transition-transform group-hover:scale-110" />
+            <span class="text-xs sm:text-sm font-medium text-emerald-800">PyTorch</span>
           </div>
+
+          <div class="group flex flex-col items-center gap-2 p-4 bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 border border-transparent hover:border-golden">
+            <img src="https://i.icoziv.workers.dev/icons?i=keras" alt="Keras" class="w-12 h-12 sm:w-14 sm:h-14 transition-transform group-hover:scale-110" />
+            <span class="text-xs sm:text-sm font-medium text-emerald-800">Keras</span>
+          </div>
+
+          <div class="group flex flex-col items-center gap-2 p-4 bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 border border-transparent hover:border-golden">
+            <img src="https://i.icoziv.workers.dev/icons?i=huggingface" alt="Hugging Face" class="w-12 h-12 sm:w-14 sm:h-14 transition-transform group-hover:scale-110" />
+            <span class="text-xs sm:text-sm font-medium text-emerald-800">HuggingFace</span>
+          </div>
+
+          <div class="group flex flex-col items-center gap-2 p-4 bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 border border-transparent hover:border-golden">
+            <img src="https://i.icoziv.workers.dev/icons?i=pandas-dark" alt="Pandas" class="w-12 h-12 sm:w-14 sm:h-14 transition-transform group-hover:scale-110" />
+            <span class="text-xs sm:text-sm font-medium text-emerald-800">Pandas</span>
+          </div>
+
+          <div class="group flex flex-col items-center gap-2 p-4 bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 border border-transparent hover:border-golden">
+            <img src="https://i.icoziv.workers.dev/icons?i=numpy-dark" alt="NumPy" class="w-12 h-12 sm:w-14 sm:h-14 transition-transform group-hover:scale-110" />
+            <span class="text-xs sm:text-sm font-medium text-emerald-800">NumPy</span>
+          </div>
+
+          <div class="group flex flex-col items-center gap-2 p-4 bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 border border-transparent hover:border-golden">
+            <img src="https://skillicons.dev/icons?i=sklearn" alt="Scikit-Learn" class="w-12 h-12 sm:w-14 sm:h-14 transition-transform group-hover:scale-110" />
+            <span class="text-xs sm:text-sm font-medium text-emerald-800">Scikit-Learn</span>
+          </div>
+
+          <div class="group flex flex-col items-center gap-2 p-4 bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 border border-transparent hover:border-golden">
+            <img src="https://i.icoziv.workers.dev/icons?i=opencv-dark" alt="OpenCV" class="w-12 h-12 sm:w-14 sm:h-14 transition-transform group-hover:scale-110" />
+            <span class="text-xs sm:text-sm font-medium text-emerald-800">OpenCV</span>
+          </div>
+
         </div>
       </section>
 
       <!-- Web Frameworks & APIs -->
-      <section class="mb-12 sm:mb-16">
-        <h2 class="text-2xl sm:text-3xl font-bold text-emerald-900 text-center mb-6 sm:mb-8">Web Frameworks & APIs</h2>
-        <div class="bg-white rounded-lg shadow-lg p-6 sm:p-8">
-          <div class="flex flex-wrap justify-center gap-3 sm:gap-4 mb-4 sm:mb-6">
-            <img src="https://skillicons.dev/icons?i=fastapi,flask,django,htmx" alt="Web Frameworks" class="hover:scale-105 transition-transform max-w-full h-auto" />
+      <section class="mb-16">
+        <h2 class="text-2xl sm:text-3xl font-bold text-emerald-900 mb-8 flex items-center gap-3">
+          <span class="bg-emerald-100 p-2 rounded-lg">🌐</span>
+          Web & APIs
+        </h2>
+        <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-4">
+          
+          <div class="group flex flex-col items-center gap-2 p-4 bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 border border-transparent hover:border-golden">
+            <img src="https://skillicons.dev/icons?i=fastapi" alt="FastAPI" class="w-12 h-12 sm:w-14 sm:h-14 transition-transform group-hover:scale-110" />
+            <span class="text-xs sm:text-sm font-medium text-emerald-800">FastAPI</span>
           </div>
-          <div class="flex flex-wrap justify-center gap-3 sm:gap-4">
-            <img src="https://i.icoziv.workers.dev/icons?i=gin" alt="Gin" title="Gin (Go)" class="hover:scale-105 transition-transform" />
-            <img src="https://i.icoziv.workers.dev/icons?i=litestar" alt="Litestar" title="Litestar" class="hover:scale-105 transition-transform" />
-            <img src="https://i.icoziv.workers.dev/icons?i=streamlit-dark" alt="Streamlit" title="Streamlit" class="hover:scale-105 transition-transform" />
-            <img src="https://i.icoziv.workers.dev/icons?i=pydantic" alt="Pydantic" title="Pydantic" class="hover:scale-105 transition-transform" />
+
+          <div class="group flex flex-col items-center gap-2 p-4 bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 border border-transparent hover:border-golden">
+            <img src="https://skillicons.dev/icons?i=flask" alt="Flask" class="w-12 h-12 sm:w-14 sm:h-14 transition-transform group-hover:scale-110" />
+            <span class="text-xs sm:text-sm font-medium text-emerald-800">Flask</span>
           </div>
+
+          <div class="group flex flex-col items-center gap-2 p-4 bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 border border-transparent hover:border-golden">
+            <img src="https://skillicons.dev/icons?i=django" alt="Django" class="w-12 h-12 sm:w-14 sm:h-14 transition-transform group-hover:scale-110" />
+            <span class="text-xs sm:text-sm font-medium text-emerald-800">Django</span>
+          </div>
+
+          <div class="group flex flex-col items-center gap-2 p-4 bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 border border-transparent hover:border-golden">
+            <img src="https://skillicons.dev/icons?i=htmx" alt="HTMX" class="w-12 h-12 sm:w-14 sm:h-14 transition-transform group-hover:scale-110" />
+            <span class="text-xs sm:text-sm font-medium text-emerald-800">HTMX</span>
+          </div>
+
+          <div class="group flex flex-col items-center gap-2 p-4 bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 border border-transparent hover:border-golden">
+            <img src="https://i.icoziv.workers.dev/icons?i=streamlit-dark" alt="Streamlit" class="w-12 h-12 sm:w-14 sm:h-14 transition-transform group-hover:scale-110" />
+            <span class="text-xs sm:text-sm font-medium text-emerald-800">Streamlit</span>
+          </div>
+          
+          <div class="group flex flex-col items-center gap-2 p-4 bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 border border-transparent hover:border-golden">
+            <img src="https://i.icoziv.workers.dev/icons?i=streamlit-dark" alt="Streamlit" class="w-12 h-12 sm:w-14 sm:h-14 transition-transform group-hover:scale-110" />
+            <span class="text-xs sm:text-sm font-medium text-emerald-800">Streamlit</span>
+          </div>
+
         </div>
+        
       </section>
 
       <!-- Development Tools & Platforms -->
-      <section class="mb-12 sm:mb-16">
-        <h2 class="text-2xl sm:text-3xl font-bold text-emerald-900 text-center mb-6 sm:mb-8">Development Tools & Platforms</h2>
-        <div class="bg-white rounded-lg shadow-lg p-6 sm:p-8">
-          <div class="flex flex-wrap justify-center gap-3 sm:gap-4">
-            <img src="https://skillicons.dev/icons?i=git,github,gitlab,vscode,linux,ubuntu,latex,jenkins,docker" alt="Dev Tools" class="hover:scale-105 transition-transform max-w-full h-auto" />
+      <section class="mb-16">
+        <h2 class="text-2xl sm:text-3xl font-bold text-emerald-900 mb-8 flex items-center gap-3">
+          <span class="bg-emerald-100 p-2 rounded-lg">🛠️</span>
+          Tools & Platforms
+        </h2>
+        <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-4">
+          
+          <div class="group flex flex-col items-center gap-2 p-4 bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 border border-transparent hover:border-golden">
+            <img src="https://skillicons.dev/icons?i=git" alt="Git" class="w-12 h-12 sm:w-14 sm:h-14 transition-transform group-hover:scale-110" />
+            <span class="text-xs sm:text-sm font-medium text-emerald-800">Git</span>
           </div>
+
+          <div class="group flex flex-col items-center gap-2 p-4 bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 border border-transparent hover:border-golden">
+            <img src="https://skillicons.dev/icons?i=github" alt="GitHub" class="w-12 h-12 sm:w-14 sm:h-14 transition-transform group-hover:scale-110" />
+            <span class="text-xs sm:text-sm font-medium text-emerald-800">GitHub</span>
+          </div>
+
+          <div class="group flex flex-col items-center gap-2 p-4 bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 border border-transparent hover:border-golden">
+            <img src="https://skillicons.dev/icons?i=docker" alt="Docker" class="w-12 h-12 sm:w-14 sm:h-14 transition-transform group-hover:scale-110" />
+            <span class="text-xs sm:text-sm font-medium text-emerald-800">Docker</span>
+          </div>
+
+          <div class="group flex flex-col items-center gap-2 p-4 bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 border border-transparent hover:border-golden">
+            <img src="https://skillicons.dev/icons?i=linux" alt="Linux" class="w-12 h-12 sm:w-14 sm:h-14 transition-transform group-hover:scale-110" />
+            <span class="text-xs sm:text-sm font-medium text-emerald-800">Linux</span>
+          </div>
+
+          <div class="group flex flex-col items-center gap-2 p-4 bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 border border-transparent hover:border-golden">
+            <img src="https://skillicons.dev/icons?i=vscode" alt="VS Code" class="w-12 h-12 sm:w-14 sm:h-14 transition-transform group-hover:scale-110" />
+            <span class="text-xs sm:text-sm font-medium text-emerald-800">VS Code</span>
+          </div>
+
+          <div class="group flex flex-col items-center gap-2 p-4 bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 border border-transparent hover:border-golden">
+            <img src="https://skillicons.dev/icons?i=jenkins" alt="Jenkins" class="w-12 h-12 sm:w-14 sm:h-14 transition-transform group-hover:scale-110" />
+            <span class="text-xs sm:text-sm font-medium text-emerald-800">Jenkins</span>
+          </div>
+
         </div>
       </section>
 
-      <!-- Data & Notebooks -->
-      <section class="mb-12 sm:mb-16">
-        <h2 class="text-2xl sm:text-3xl font-bold text-emerald-900 text-center mb-6 sm:mb-8">Data & Notebooks</h2>
-        <div class="bg-white rounded-lg shadow-lg p-6 sm:p-8">
-          <div class="flex flex-wrap justify-center gap-3 sm:gap-4">
-            <img src="https://i.icoziv.workers.dev/icons?i=googlecolab-dark" alt="Google Colab" title="Google Colab" class="hover:scale-105 transition-transform" />
-            <img src="https://i.icoziv.workers.dev/icons?i=kaggle" alt="Kaggle" title="Kaggle" class="hover:scale-105 transition-transform" />
-            <img src="https://i.icoziv.workers.dev/icons?i=jupiter-dark" alt="Jupyter" title="Jupyter" class="hover:scale-105 transition-transform" />
-            <img src="https://i.icoziv.workers.dev/icons?i=huggingface" alt="Hugging Face" title="Hugging Face" class="hover:scale-105 transition-transform" />
+      <!-- Data & Cloud -->
+      <section class="mb-16">
+        <h2 class="text-2xl sm:text-3xl font-bold text-emerald-900 mb-8 flex items-center gap-3">
+          <span class="bg-emerald-100 p-2 rounded-lg">☁️</span>
+          Data & Cloud
+        </h2>
+        <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-4">
+          
+          <div class="group flex flex-col items-center gap-2 p-4 bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 border border-transparent hover:border-golden">
+            <img src="https://skillicons.dev/icons?i=postgres" alt="PostgreSQL" class="w-12 h-12 sm:w-14 sm:h-14 transition-transform group-hover:scale-110" />
+            <span class="text-xs sm:text-sm font-medium text-emerald-800">PostgreSQL</span>
           </div>
-        </div>
-      </section>
 
-      <!-- Databases & Cloud -->
-      <section class="mb-12 sm:mb-16">
-        <h2 class="text-2xl sm:text-3xl font-bold text-emerald-900 text-center mb-6 sm:mb-8">Databases & Cloud</h2>
-        <div class="bg-white rounded-lg shadow-lg p-6 sm:p-8">
-          <div class="flex flex-wrap justify-center gap-3 sm:gap-4 mb-4 sm:mb-6">
-            <img src="https://skillicons.dev/icons?i=sqlite,mysql,postgresql,mongodb,redis,cassandra,d3,aws,gcp,azure" alt="Databases & Cloud" class="hover:scale-105 transition-transform max-w-full h-auto" />
+          <div class="group flex flex-col items-center gap-2 p-4 bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 border border-transparent hover:border-golden">
+            <img src="https://skillicons.dev/icons?i=mongodb" alt="MongoDB" class="w-12 h-12 sm:w-14 sm:h-14 transition-transform group-hover:scale-110" />
+            <span class="text-xs sm:text-sm font-medium text-emerald-800">MongoDB</span>
           </div>
-          <div class="flex flex-wrap justify-center gap-3 sm:gap-4">
-            <img src="https://i.icoziv.workers.dev/icons?i=supabase-dark" alt="Supabase" title="Supabase" class="hover:scale-105 transition-transform" />
-            <img src="https://i.icoziv.workers.dev/icons?i=digitalocean" alt="DigitalOcean" title="DigitalOcean" class="hover:scale-105 transition-transform" />
+
+          <div class="group flex flex-col items-center gap-2 p-4 bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 border border-transparent hover:border-golden">
+            <img src="https://skillicons.dev/icons?i=aws" alt="AWS" class="w-12 h-12 sm:w-14 sm:h-14 transition-transform group-hover:scale-110" />
+            <span class="text-xs sm:text-sm font-medium text-emerald-800">AWS</span>
           </div>
+
+          <div class="group flex flex-col items-center gap-2 p-4 bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 border border-transparent hover:border-golden">
+            <img src="https://skillicons.dev/icons?i=gcp" alt="GCP" class="w-12 h-12 sm:w-14 sm:h-14 transition-transform group-hover:scale-110" />
+            <span class="text-xs sm:text-sm font-medium text-emerald-800">GCP</span>
+          </div>
+
+          <div class="group flex flex-col items-center gap-2 p-4 bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 border border-transparent hover:border-golden">
+            <img src="https://i.icoziv.workers.dev/icons?i=kaggle" alt="Kaggle" class="w-12 h-12 sm:w-14 sm:h-14 transition-transform group-hover:scale-110" />
+            <span class="text-xs sm:text-sm font-medium text-emerald-800">Kaggle</span>
+          </div>
+
+          <div class="group flex flex-col items-center gap-2 p-4 bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 border border-transparent hover:border-golden">
+            <img src="https://i.icoziv.workers.dev/icons?i=jupiter-dark" alt="Jupyter" class="w-12 h-12 sm:w-14 sm:h-14 transition-transform group-hover:scale-110" />
+            <span class="text-xs sm:text-sm font-medium text-emerald-800">Jupyter</span>
+          </div>
+
         </div>
       </section>
 
       <!-- Learning Journey -->
-      <section class="bg-golden bg-opacity-20 rounded-lg p-6 sm:p-8 text-center">
-        <h3 class="text-xl sm:text-2xl font-bold text-emerald-900 mb-3 sm:mb-4">🌱 Always Learning</h3>
-        <p class="text-base sm:text-lg text-emerald-700 max-w-2xl mx-auto">
-          This tech stack continues to evolve as I explore new technologies and deepen my expertise. 
-          Each tool represents a step in my journey to build impactful solutions for Africa and beyond.
+      <section class="bg-gradient-to-r from-emerald-900 to-emerald-800 rounded-2xl p-8 sm:p-10 text-center shadow-xl text-offwhite">
+        <h3 class="text-2xl sm:text-3xl font-bold mb-4 text-golden">🌱 Always Learning</h3>
+        <p class="text-base sm:text-lg opacity-90 max-w-2xl mx-auto leading-relaxed">
+          This tech stack continues to evolve. Each tool represents a step in my journey to build impactful solutions for Africa and beyond.
         </p>
       </section>
 

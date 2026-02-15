@@ -1,0 +1,1007 @@
+# Layout.astro
+
+---
+import '../styles/global.css'
+const { title, description = "Aspiring Computational Researcher | AI Enthusiast | DiLi Founder - Building intelligent solutions for Africa and beyond" } = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta name="author" content="Yahaya Minkail Ibrahim" />
+    <meta name="keywords" content="AI, Machine Learning, Data Science, AgriTech, Nigeria, DiLi, Computational Research" />
+    <meta name="theme-color" content="#16a43a">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:creator" content="@0fficialDiLi" />
+    
+    <title>{title}</title>
+    
+    <style is:global>
+      body { 
+        background-color: #f9f7f1; 
+        color: #022c22;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      }
+      
+      html {
+        scroll-behavior: smooth;
+      }
+      
+      /* Custom scrollbar */
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+      
+      ::-webkit-scrollbar-track {
+        background: #f9f7f1;
+      }
+      
+      ::-webkit-scrollbar-thumb {
+        background: #c8b273;
+        border-radius: 5px;
+      }
+      
+      ::-webkit-scrollbar-thumb:hover {
+        background: #a68a44;
+      }
+    </style>
+  </head>
+  <body class="selection:bg-golden selection:text-emerald-900">
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-emerald-900 shadow-lg">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 py-4">
+        <div class="flex justify-between items-center">
+          <a href="/" class="text-xl sm:text-2xl font-bold text-golden hover:text-golden-dark transition-colors">
+            OfficialDiLi
+          </a>
+          
+          <!-- Desktop Navigation -->
+          <div class="hidden md:flex gap-4 lg:gap-6 items-center">
+            <a href="/#about" class="text-offwhite hover:text-golden transition-colors font-semibold text-sm lg:text-base">
+              About
+            </a>
+            <a href="/techstack" class="text-offwhite hover:text-golden-dark transition-colors font-semibold text-sm lg:text-base">
+              Tech Stack
+            </a>
+            <a href="/#projects" class="text-offwhite hover:text-golden-dark transition-colors font-semibold text-sm lg:text-base">
+              Projects
+            </a>
+            <a href="/#contact" class="text-offwhite hover:text-golden-dark transition-colors font-semibold text-sm lg:text-base">
+              Contact
+            </a>
+            <a href="https://github.com/OfficialDiLi" target="_blank" rel="noopener noreferrer"
+               class="px-3 lg:px-4 py-2 bg-golden text-emerald-900 rounded-lg hover:bg-golden-dark transition-colors font-semibold text-sm lg:text-base hover:text-white">
+              GitHub
+            </a>
+          </div>
+
+          <!-- Mobile Menu Button -->
+          <button id="mobile-menu-button" class="md:hidden text-offwhite hover:text-golden transition-colors p-2">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+              <path id="close-icon" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
+          <div class="flex flex-col gap-3">
+            <a href="/#about" class="text-offwhite hover:text-golden transition-colors font-semibold py-2 border-b border-emerald-700">
+              About
+            </a>
+            <a href="/techstack" class="text-offwhite hover:text-golden transition-colors font-semibold py-2 border-b border-emerald-700">
+              Tech Stack
+            </a>
+            <a href="/#projects" class="text-offwhite hover:text-golden transition-colors font-semibold py-2 border-b border-emerald-700">
+              Projects
+            </a>
+            <a href="/#contact" class="text-offwhite hover:text-golden transition-colors font-semibold py-2 border-b border-emerald-700">
+              Contact
+            </a>
+            <a href="https://github.com/OfficialDiLi" target="_blank" rel="noopener noreferrer"
+               class="px-4 py-2 bg-golden text-emerald-900 rounded-lg hover:bg-golden-dark transition-colors font-semibold text-center mt-2">
+              GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <script>
+      // Mobile menu toggle
+      const menuButton = document.getElementById('mobile-menu-button');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const menuIcon = document.getElementById('menu-icon');
+      const closeIcon = document.getElementById('close-icon');
+
+      menuButton?.addEventListener('click', () => {
+        mobileMenu?.classList.toggle('hidden');
+        menuIcon?.classList.toggle('hidden');
+        closeIcon?.classList.toggle('hidden');
+      });
+
+      // Close mobile menu when clicking on a link
+      const mobileLinks = mobileMenu?.querySelectorAll('a');
+      mobileLinks?.forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu?.classList.add('hidden');
+          menuIcon?.classList.remove('hidden');
+          closeIcon?.classList.add('hidden');
+        });
+      });
+    </script>
+
+    <slot />
+
+    <!-- Footer -->
+    <footer class="bg-emerald-900 text-offwhite py-8">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+          <div class="text-center md:text-left">
+            <p class="text-golden font-bold text-lg sm:text-xl mb-2">Yahaya Minkail Ibrahim</p>
+            <p class="text-xs sm:text-sm">Building the future, one line of code at a time 🚀</p>
+          </div>
+          
+          <div class="flex flex-wrap justify-center gap-3 sm:gap-4 text-sm">
+            <a href="https://github.com/OfficialDiLi" target="_blank" rel="noopener noreferrer"
+               class="hover:text-golden transition-colors">
+              GitHub
+            </a>
+            <a href="https://x.com/0fficialDiLi" target="_blank" rel="noopener noreferrer"
+               class="hover:text-golden transition-colors">
+              Twitter/X
+            </a>
+            <a href="https://linkedin.com/in/YOUR-LINKEDIN-USERNAME" target="_blank" rel="noopener noreferrer"
+               class="hover:text-golden transition-colors">
+              LinkedIn
+            </a>
+          </div>
+        </div>
+        
+        <div class="mt-6 pt-6 border-t border-emerald-700 text-center text-xs sm:text-sm">
+          <p>© {new Date().getFullYear()} Yahaya Minkail Ibrahim. All rights reserved.</p>
+          <p class="text-golden mt-2">✨ DiLi is rising. The world is waiting.</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
+
+
+
+# index.astro
+
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout title="Yahaya Minkail Ibrahim | AI Researcher & DiLi Founder">
+  <main>
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center justify-center bg-gradient-to-br from-offwhite to-emerald-50/50 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 w-full">
+        <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+          
+          <!-- Left Side - Text Content -->
+          <div class="text-center lg:text-left space-y-6">
+            <!-- Greeting with fade-in animation -->
+            <div class="animate-fade-in-up">
+              <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-emerald-900 leading-tight mb-4">
+                <span class="block mb-2">Hi there, I'm</span>
+                <span class="text-golden inline-block bg-gradient-to-r from-golden via-emerald-500 to-golden bg-clip-text text-transparent animate-text-gradient bg-[length:200%_auto]">
+                  Yahaya Minkail Ibrahim
+                </span>
+                <span class="inline-block animate-wave ml-2">👋</span>
+              </h1>
+            </div>
+
+            <!-- Typing effect subtitle -->
+            <div class="animate-fade-in-up" style="animation-delay: 0.3s;">
+              <div class="text-lg sm:text-xl md:text-2xl text-emerald-700 font-semibold h-8 sm:h-10">
+                <span id="typing-text" class="border-r-2 border-emerald-700 pr-1"></span>
+              </div>
+            </div>
+
+            <!-- Additional roles with typing effect -->
+            <div class="space-y-2" style="animation-delay: 0.5s;">
+              <div class="text-base sm:text-lg md:text-xl text-emerald-600 min-h-[1.5rem]">
+                <span id="typing-roles" class="border-r-2 border-emerald-600 pr-1"></span>
+              </div>
+            </div>
+
+            <!-- Tagline with typing effect -->
+            <div style="animation-delay: 0.7s;">
+              <div class="text-base sm:text-lg md:text-xl text-emerald-500 italic border-l-4 border-golden pl-4 py-3 min-h-[6rem]">
+                <div id="typing-taglines"></div>
+              </div>
+            </div>
+
+            <!-- CTA Buttons with hover effects -->
+            <div class="flex flex-wrap justify-center lg:justify-start gap-3 sm:gap-4 pt-4 animate-fade-in-up" style="animation-delay: 0.9s;">
+              <a href="#vision" 
+                 class="group px-6 sm:px-8 py-3 sm:py-4 bg-emerald-900 text-offwhite rounded-lg hover:bg-golden hover:text-emerald-900 transition-all duration-300 font-semibold text-sm sm:text-base shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                 <span class="flex items-center gap-2">
+                   DiLi Vision
+                   <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                   </svg>
+                 </span>
+              </a>
+              <a href="#projects" 
+                 class="px-6 sm:px-8 py-3 sm:py-4 border-2 border-golden text-golden font-semibold rounded-lg hover:bg-golden hover:text-emerald-900 transition-all duration-300 text-sm sm:text-base shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                 View Projects
+              </a>
+              <a href="#contact" 
+                 class="px-6 sm:px-8 py-3 sm:py-4 border-2 border-emerald-900 text-emerald-900 font-semibold rounded-lg hover:bg-emerald-900 hover:text-offwhite transition-all duration-300 text-sm sm:text-base shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                 Let's Connect
+              </a>
+            </div>
+
+          
+            <!-- Social Links -->
+            <div class="flex flex-wrap justify-center lg:justify-start gap-4 pt-4 animate-fade-in-up" style="animation-delay: 1.1s;">
+              <a href="https://github.com/OfficialDiLi" target="_blank" rel="noopener noreferrer"
+                 class="transform hover:scale-110 transition-transform hover:rotate-6">
+                <svg class="w-6 h-6 sm:w-7 sm:h-7 text-emerald-900 hover:text-golden transition-colors" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                </svg>
+              </a>
+              <a href="https://x.com/0fficialDiLi" target="_blank" rel="noopener noreferrer"
+                 class="transform hover:scale-110 transition-transform hover:rotate-6">
+                <img src="https://i.icoziv.workers.dev/icons?i=x-dark" alt="X (Twitter)" class="w-6 h-6 sm:w-7 sm:h-7 opacity-80 hover:opacity-100 transition-opacity" />
+              </a>
+              <a href="https://linkedin.com/in/YOUR-LINKEDIN-USERNAME" target="_blank" rel="noopener noreferrer"
+                 class="transform hover:scale-110 transition-transform hover:rotate-6">
+                <img src="https://i.icoziv.workers.dev/icons?i=linkedin" alt="LinkedIn" class="w-6 h-6 sm:w-7 sm:h-7 opacity-80 hover:opacity-100 transition-opacity" />
+              </a>
+            </div>
+          </div>
+
+          <!-- Right Side - Profile Picture -->
+          <div class="flex justify-center lg:justify-end">
+            <div class="relative group">
+              <!-- Decorative rings -->
+              <div class="absolute -inset-4 bg-gradient-to-r from-golden to-emerald-500 rounded-full opacity-20 blur-2xl group-hover:opacity-30 transition-opacity duration-500 animate-pulse"></div>
+              
+              <!-- Profile Image Container -->
+              <div class="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-4 border-golden shadow-2xl transform group-hover:scale-105 transition-transform duration-500">
+                <!-- Placeholder - Replace src with your actual image -->
+                <img 
+                  src="/profile.jpg" 
+                  alt="Yahaya Minkail Ibrahim"
+                  class="w-full h-full object-cover"
+                  onerror="this.onerror=null; this.src='https://api.dicebear.com/7.x/avataaars/svg?seed=Yahaya&backgroundColor=10b981'"
+                />
+                
+                <!-- Overlay gradient -->
+                <div class="absolute inset-0 bg-gradient-to-t from-emerald-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              </div>
+              
+              <!-- Floating badge -->
+              <div class="absolute -bottom-4 -right-4 bg-emerald-900 text-golden px-6 py-3 rounded-full shadow-lg transform rotate-12 group-hover:rotate-0 transition-transform duration-500">
+                <span class="font-bold text-sm sm:text-base">DiLi 🚀</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <!-- <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+          <a href="#vision" class="flex flex-col items-center gap-2 text-emerald-900 hover:text-golden transition-colors">
+            <span class="text-sm font-medium">Scroll Down</span>
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+            </svg>
+          </a>
+        </div> -->
+      </div>
+
+      <!-- Typing Effect Script -->
+      <script>
+        document.addEventListener('DOMContentLoaded', () => {
+          // Main title typing
+          const textElement = document.getElementById('typing-text');
+          const texts = [
+            'Aspiring Computational Researcher',
+            'AI & Machine Learning Enthusiast',
+            'Youth & Practical Education Advocate',
+            'DiLi Founder & Innovator'
+          ];
+          
+          let textIndex = 0;
+          let charIndex = 0;
+          let isDeleting = false;
+          let typingSpeed = 100;
+          
+          function type() {
+            const currentText = texts[textIndex];
+            
+            if (isDeleting) {
+              textElement.textContent = currentText.substring(0, charIndex - 1);
+              charIndex--;
+              typingSpeed = 50;
+            } else {
+              textElement.textContent = currentText.substring(0, charIndex + 1);
+              charIndex++;
+              typingSpeed = 100;
+            }
+            
+            if (!isDeleting && charIndex === currentText.length) {
+              typingSpeed = 2000;
+              isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+              isDeleting = false;
+              textIndex = (textIndex + 1) % texts.length;
+              typingSpeed = 500;
+            }
+            
+            setTimeout(type, typingSpeed);
+          }
+          
+          // Roles typing (starts after 2 seconds)
+          const rolesElement = document.getElementById('typing-roles');
+          const roles = [
+            '• AI Enthusiast • Education Advocate',
+            'Proudly Nigerian 🇳🇬'
+          ];
+          
+          let roleIndex = 0;
+          let roleCharIndex = 0;
+          let roleComplete = false;
+          
+          function typeRoles() {
+            if (roleComplete) return;
+            
+            if (roleIndex < roles.length) {
+              const currentRole = roles[roleIndex];
+              
+              if (roleCharIndex < currentRole.length) {
+                rolesElement.textContent = roles.slice(0, roleIndex).join('\n') + 
+                  (roleIndex > 0 ? '\n' : '') + 
+                  currentRole.substring(0, roleCharIndex + 1);
+                roleCharIndex++;
+                setTimeout(typeRoles, 50);
+              } else {
+                roleIndex++;
+                roleCharIndex = 0;
+                setTimeout(typeRoles, 500);
+              }
+            } else {
+              roleComplete = true;
+              rolesElement.classList.remove('border-r-2');
+              // Start taglines after roles complete
+              setTimeout(startTaglines, 500);
+            }
+          }
+          
+          // Taglines typing (starts after roles complete)
+          const taglinesElement = document.getElementById('typing-taglines');
+          const taglines = [
+            '→ Building with Purpose',
+            '→ Learning with Passion',
+            '→ Dreaming Beyond Borders'
+          ];
+          
+          let taglineIndex = 0;
+          let taglineCharIndex = 0;
+          
+          function startTaglines() {
+            typeTaglines();
+          }
+          
+          function typeTaglines() {
+            if (taglineIndex < taglines.length) {
+              const currentTagline = taglines[taglineIndex];
+              
+              if (taglineCharIndex < currentTagline.length) {
+                const displayedTaglines = taglines.slice(0, taglineIndex).map(t => `<div>${t}</div>`).join('');
+                const currentLine = `<div>${currentTagline.substring(0, taglineCharIndex + 1)}<span class="border-r-2 border-emerald-500"></span></div>`;
+                taglinesElement.innerHTML = displayedTaglines + currentLine;
+                taglineCharIndex++;
+                setTimeout(typeTaglines, 50);
+              } else {
+                taglineIndex++;
+                taglineCharIndex = 0;
+                setTimeout(typeTaglines, 300);
+              }
+            } else {
+              // All taglines complete
+              taglinesElement.innerHTML = taglines.map(t => `<div>${t}</div>`).join('');
+            }
+          }
+          
+          // Start sequences
+          type(); // Start main title immediately
+          setTimeout(typeRoles, 2000); // Start roles after 2 seconds
+        });
+      </script>
+    </section>
+
+    <!-- DiLi Vision Section -->
+    <section id="vision" class="min-h-screen bg-emerald-900 text-offwhite flex items-center justify-center">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
+        <div class="text-center mb-8 sm:mb-12">
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 leading-tight">
+            💡 DiLi — <span class="text-golden">Smarter Living Phygitally</span>
+          </h2>
+          <p class="text-base sm:text-lg lg:text-xl mb-6 sm:mb-8 max-w-4xl mx-auto leading-relaxed px-4">
+            "To harmonize life with intelligent technology — for smarter homes, farms, empowered individuals, businesses and digitally literate communities across Africa and beyond."
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6 sm:gap-8 mb-8">
+          <div class="bg-emerald-800 rounded-lg p-6 sm:p-8">
+            <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-golden">🎯 Mission</h3>
+            <p class="text-sm sm:text-base lg:text-lg leading-relaxed">
+              Build tools, platforms, and communities that merge <strong>physical living with digital intelligence</strong> — <em>Phygitally</em>.
+            </p>
+          </div>
+
+          <div class="bg-emerald-800 rounded-lg p-6 sm:p-8">
+            <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-golden">🔬 Focus Areas</h3>
+            <ul class="space-y-2 text-sm sm:text-base lg:text-lg">
+              <li>🌾 Smarter Farming & AgriTech</li>
+              <li>🏠 Smart Home Automation</li>
+              <li>📱 Digital Literacy & Access</li>
+              <li>🗣️ AI for Indigenous Languages</li>
+              <li>🎓 Tech-Driven Education & Sustainability</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="text-center px-4">
+          <p class="text-base sm:text-lg lg:text-xl italic text-golden">
+            🌀 DiLi is more than a brand — it's a movement to <strong>live smarter, think deeper, and code for change</strong>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- What I'm Up To Section -->
+    <section class="min-h-screen flex items-center justify-center bg-gradient-to-br from-offwhite to-emerald-50">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
+        <h2 class="text-3xl sm:text-4xl font-bold text-emerald-900 mb-8 sm:mb-12 text-center">🚀 What I'm Up To</h2>
+        
+        <div class="grid sm:grid-cols-2 gap-4 sm:gap-6 mb-6">
+          <div class="border-2 border-emerald-500 rounded-lg p-4 sm:p-6 hover:bg-emerald-50 transition-colors">
+            <h3 class="text-lg sm:text-xl font-bold text-emerald-900 mb-2 sm:mb-3">🔭 Currently working on</h3>
+            <p class="text-sm sm:text-base text-emerald-700">Building foundational AI projects and exploring smart agriculture solutions</p>
+          </div>
+
+          <div class="border-2 border-emerald-500 rounded-lg p-4 sm:p-6 hover:bg-emerald-50 transition-colors">
+            <h3 class="text-lg sm:text-xl font-bold text-emerald-900 mb-2 sm:mb-3">🌱 Currently learning</h3>
+            <p class="text-sm sm:text-base text-emerald-700">Machine Learning, LLM fine-tuning, and African language NLP</p>
+          </div>
+
+          <div class="border-2 border-golden rounded-lg p-4 sm:p-6 hover:bg-golden hover:bg-opacity-10 transition-colors">
+            <h3 class="text-lg sm:text-xl font-bold text-emerald-900 mb-2 sm:mb-3">👯 Looking to collaborate on</h3>
+            <p class="text-sm sm:text-base text-emerald-700">Open-source AI projects, AgriTech innovations, and digital literacy initiatives</p>
+          </div>
+
+          <div class="border-2 border-golden rounded-lg p-4 sm:p-6 hover:bg-golden hover:bg-opacity-10 transition-colors">
+            <h3 class="text-lg sm:text-xl font-bold text-emerald-900 mb-2 sm:mb-3">💬 Ask me about</h3>
+            <p class="text-sm sm:text-base text-emerald-700">AI for social good, Nigerian tech ecosystem, computational research</p>
+          </div>
+        </div>
+
+        <div class="text-center bg-golden bg-opacity-20 rounded-lg p-4 sm:p-6">
+          <p class="text-base sm:text-lg md:text-xl text-emerald-900">
+            <strong>⚡ Fun fact:</strong> I believe Africa's next revolution will be digital, and I'm here to help build it
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- AI Journey Section -->
+    <section class="min-h-screen bg-gradient-to-br from-emerald-50 to-golden/10 flex items-center justify-center">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
+        <h2 class="text-3xl sm:text-4xl font-bold text-emerald-900 mb-4 sm:mb-6 text-center">🧠 My AI Journey</h2>
+        <p class="text-base sm:text-lg lg:text-xl text-center text-emerald-700 mb-8 sm:mb-12 max-w-3xl mx-auto">
+          AI is the <strong>language of tomorrow</strong>, and I approach it with curiosity and purpose.
+        </p>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+          <div class="bg-emerald-800 text-offwhite rounded-lg p-4 sm:p-6 shadow-md hover:shadow-xl transition-all hover:scale-105 duration-300">
+            <h3 class="text-xl sm:text-2xl font-bold mb-2 sm:mb-3">📊 Data Science</h3>
+            <p class="text-sm sm:text-base text-emerald-100">Data analysis, visualization, and insights extraction</p>
+          </div>
+
+          <div class="bg-emerald-800 text-offwhite rounded-lg p-4 sm:p-6 shadow-md hover:shadow-xl transition-all hover:scale-105 duration-300">
+            <h3 class="text-xl sm:text-2xl font-bold mb-2 sm:mb-3">🤖 Artificial Intelligence</h3>
+            <p class="text-sm sm:text-base text-emerald-100">ML, LLMs, fine-tuning, applied AI</p>
+          </div>
+
+          <div class="bg-emerald-800 text-offwhite rounded-lg p-4 sm:p-6 shadow-md hover:shadow-xl transition-all hover:scale-105 duration-300">
+            <h3 class="text-xl sm:text-2xl font-bold mb-2 sm:mb-3">🌍 Multilingual NLP</h3>
+            <p class="text-sm sm:text-base text-emerald-100">African Indigenous Language technologies</p>
+          </div>
+
+          <div class="bg-emerald-800 text-offwhite rounded-lg p-4 sm:p-6 shadow-md hover:shadow-xl transition-all hover:scale-105 duration-300">
+            <h3 class="text-xl sm:text-2xl font-bold mb-2 sm:mb-3">🧠 Ethical AI</h3>
+            <p class="text-sm sm:text-base text-emerald-100">Fairness, transparency, responsible data practices</p>
+          </div>
+
+          <div class="bg-emerald-800 text-offwhite rounded-lg p-4 sm:p-6 shadow-md hover:shadow-xl transition-all hover:scale-105 duration-300">
+            <h3 class="text-xl sm:text-2xl font-bold mb-2 sm:mb-3">🌾 AgriTech</h3>
+            <p class="text-sm sm:text-base text-emerald-100">Empowering agriculture with AI-driven solutions</p>
+          </div>
+
+          <div class="bg-gradient-to-br from-golden to-golden-dark text-emerald-900 rounded-lg p-4 sm:p-6 shadow-md hover:shadow-xl transition-all hover:scale-105 duration-300">
+            <h3 class="text-xl sm:text-2xl font-bold mb-2 sm:mb-3">🚀 Innovation</h3>
+            <p class="text-sm sm:text-base font-semibold">Building the future, one model at a time</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about" class="min-h-screen flex items-center justify-center">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
+        <h2 class="text-3xl sm:text-4xl font-bold text-emerald-900 mb-8 sm:mb-12 text-center">🌟 About Me</h2>
+        
+        <div class="grid md:grid-cols-2 gap-6 sm:gap-8">
+          <div class="space-y-4 sm:space-y-6">
+            <div class="flex items-start gap-3 sm:gap-4">
+              <span class="text-2xl sm:text-3xl">🎓</span>
+              <p class="text-base sm:text-lg text-emerald-700">Building a solid foundation in Computational Science & Engineering</p>
+            </div>
+            <div class="flex items-start gap-3 sm:gap-4">
+              <span class="text-2xl sm:text-3xl">🌍</span>
+              <p class="text-base sm:text-lg text-emerald-700">Exploring the intersection of computing, culture, and community</p>
+            </div>
+            <div class="flex items-start gap-3 sm:gap-4">
+              <span class="text-2xl sm:text-3xl">💡</span>
+              <p class="text-base sm:text-lg text-emerald-700">Passionate about creating solutions that uplift and empower</p>
+            </div>
+          </div>
+
+          <div class="space-y-4 sm:space-y-6">
+            <div class="flex items-start gap-3 sm:gap-4">
+              <span class="text-2xl sm:text-3xl">🇳🇬</span>
+              <p class="text-base sm:text-lg text-emerald-700">Committed to advancing Nigeria's tech ecosystem</p>
+            </div>
+            <div class="flex items-start gap-3 sm:gap-4">
+              <span class="text-2xl sm:text-3xl">📚</span>
+              <p class="text-base sm:text-lg text-emerald-700">Continuous learner, always curious about emerging technologies</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="min-h-screen bg-emerald-900 text-offwhite flex items-center justify-center">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-8 sm:mb-12 text-center">💼 Featured Projects</h2>
+        
+        <div class="bg-emerald-800 rounded-lg p-6 sm:p-8 lg:p-12 text-center max-w-4xl mx-auto">
+          <p class="text-xl sm:text-2xl mb-6 sm:mb-8">
+            🚧 <strong>Projects coming soon!</strong>
+          </p>
+          <p class="text-base sm:text-lg lg:text-xl mb-6 sm:mb-8 text-golden">
+            I'm currently building foundational work that will showcase:
+          </p>
+          <div class="grid sm:grid-cols-2 gap-3 sm:gap-4 max-w-2xl mx-auto text-left">
+            <div class="flex items-center gap-3">
+              <span class="text-golden text-xl">→</span>
+              <span class="text-sm sm:text-base">DiLi Smart Living Platform concepts</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="text-golden text-xl">→</span>
+              <span class="text-sm sm:text-base">AI models for agricultural optimization</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="text-golden text-xl">→</span>
+              <span class="text-sm sm:text-base">NLP tools for Nigerian languages</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="text-golden text-xl">→</span>
+              <span class="text-sm sm:text-base">Educational tech resources</span>
+            </div>
+          </div>
+          <p class="text-base sm:text-lg mt-6 sm:mt-8 text-golden">
+            🔗 <em>Stay tuned as I add my first repositories</em>
+          </p>
+        </div>
+
+        <div class="mt-8 text-center">
+          <a href="https://github.com/OfficialDiLi" 
+             class="inline-block px-6 sm:px-8 py-2 sm:py-3 bg-golden text-emerald-900 rounded-lg hover:bg-golden-dark transition-colors duration-300 font-semibold text-sm sm:text-base">
+             View My GitHub Profile
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Beyond Code Section -->
+    <section class="min-h-screen flex items-center justify-center bg-gradient-to-br from-offwhite to-emerald-50">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
+        <h2 class="text-3xl sm:text-4xl font-bold text-emerald-900 mb-8 sm:mb-12 text-center">📚 Beyond Code</h2>
+        <p class="text-base sm:text-lg lg:text-xl text-center text-emerald-700 mb-8 sm:mb-12">When I'm not coding, I explore:</p>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+          <div class="border-l-4 border-golden pl-4 sm:pl-6">
+            <h3 class="text-lg sm:text-xl font-bold text-emerald-900 mb-2">🧠 Tech Research & Trends</h3>
+            <p class="text-sm sm:text-base text-emerald-700">Staying ahead of emerging technologies</p>
+          </div>
+
+          <div class="border-l-4 border-golden pl-4 sm:pl-6">
+            <h3 class="text-lg sm:text-xl font-bold text-emerald-900 mb-2">🌾 Agricultural Activities</h3>
+            <p class="text-sm sm:text-base text-emerald-700">Understanding the problems I'm solving</p>
+          </div>
+
+          <div class="border-l-4 border-golden pl-4 sm:pl-6">
+            <h3 class="text-lg sm:text-xl font-bold text-emerald-900 mb-2">💸 Financial & Entrepreneurial Literacy</h3>
+            <p class="text-sm sm:text-base text-emerald-700">Building sustainable ventures</p>
+          </div>
+
+          <div class="border-l-4 border-emerald-500 pl-4 sm:pl-6">
+            <h3 class="text-lg sm:text-xl font-bold text-emerald-900 mb-2">🗣️ Communication & Negotiation</h3>
+            <p class="text-sm sm:text-base text-emerald-700">Connecting ideas to impact</p>
+          </div>
+
+          <div class="border-l-4 border-emerald-500 pl-4 sm:pl-6">
+            <h3 class="text-lg sm:text-xl font-bold text-emerald-900 mb-2">📖 Biographies</h3>
+            <p class="text-sm sm:text-base text-emerald-700">Learning from builders and innovators who came before</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="min-h-screen bg-gradient-to-br from-emerald-900 to-emerald-800 text-offwhite flex items-center justify-center">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 py-12 sm:py-16 text-center">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-6 sm:mb-8">🌐 Let's Connect</h2>
+        <p class="text-base sm:text-lg lg:text-xl mb-8 sm:mb-12">I'm always open to collaboration, mentorship, and meaningful conversations</p>
+
+        <div class="flex flex-wrap justify-center gap-4 sm:gap-6 mb-8 sm:mb-12">
+          <a href="https://facebook.com/minkailyahayaibrahim" target="_blank" rel="noopener noreferrer"
+             class="transform hover:scale-110 transition-transform">
+            <img src="https://i.icoziv.workers.dev/icons?i=facebook" alt="Facebook" class="w-10 h-10 sm:w-12 sm:h-12" />
+          </a>
+          <a href="https://x.com/0fficialDiLi" target="_blank" rel="noopener noreferrer"
+             class="transform hover:scale-110 transition-transform">
+            <img src="https://i.icoziv.workers.dev/icons?i=x-dark" alt="X (Twitter)" class="w-10 h-10 sm:w-12 sm:h-12" />
+          </a>
+          <a href="https://instagram.com/minkailyahayaibrahim" target="_blank" rel="noopener noreferrer"
+             class="transform hover:scale-110 transition-transform">
+            <img src="https://i.icoziv.workers.dev/icons?i=instagram" alt="Instagram" class="w-10 h-10 sm:w-12 sm:h-12" />
+          </a>
+          <a href="https://t.me/MinkailYahaya" target="_blank" rel="noopener noreferrer"
+             class="transform hover:scale-110 transition-transform">
+            <img src="https://i.icoziv.workers.dev/icons?i=telegram" alt="Telegram" class="w-10 h-10 sm:w-12 sm:h-12" />
+          </a>
+          <a href="https://reddit.com/u/Yahayaminkail" target="_blank" rel="noopener noreferrer"
+             class="transform hover:scale-110 transition-transform">
+            <img src="https://i.icoziv.workers.dev/icons?i=reddit" alt="Reddit" class="w-10 h-10 sm:w-12 sm:h-12" />
+          </a>
+          <a href="https://linkedin.com/in/YOUR-LINKEDIN-USERNAME" target="_blank" rel="noopener noreferrer"
+             class="transform hover:scale-110 transition-transform">
+            <img src="https://i.icoziv.workers.dev/icons?i=linkedin" alt="LinkedIn" class="w-10 h-10 sm:w-12 sm:h-12" />
+          </a>
+        </div>
+
+        <div class="mb-8 sm:mb-12">
+          <a href="mailto:minkailibrahimyahya@gmail.com" 
+             class="text-base sm:text-lg md:text-xl lg:text-2xl text-golden hover:text-golden-dark transition-colors break-all">
+             📧 minkailibrahimyahya@gmail.com
+          </a>
+        </div>
+
+        <div class="border-t border-golden pt-8 sm:pt-12 mt-8 sm:mt-12">
+          <p class="text-sm sm:text-base md:text-lg lg:text-xl mb-4 sm:mb-6 leading-relaxed px-4">
+            Thank you for stopping by. I believe that technology is most powerful when it serves humanity.
+          </p>
+          <p class="text-sm sm:text-base md:text-lg mb-4 sm:mb-6 px-4">
+            Whether you're here to collaborate, learn, or simply explore — welcome to my journey.
+          </p>
+          <p class="text-lg sm:text-xl lg:text-2xl text-golden italic px-4">
+            ✨ The world is waiting. DiLi is rising. I am Yahaya.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>
+
+
+
+# techstack.astro
+
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout title="Tech Stack | Yahaya Minkail Ibrahim">
+  <main class="min-h-screen bg-gradient-to-br from-offwhite to-emerald-50">
+    <!-- Header -->
+    <section class="bg-emerald-900 text-offwhite py-12 sm:py-16">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="text-center">
+          <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4">🛠️ Tech Stack</h1>
+          <p class="text-lg sm:text-xl text-golden">Technologies I work with and continue to learn</p>
+        </div>
+        
+        <div class="mt-6 sm:mt-8 text-center">
+          <a href="/" class="text-golden hover:text-golden-dark transition-colors text-sm sm:text-base">
+            ← Back to Home
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
+      
+      <!-- Languages & Core Technologies -->
+      <section class="mb-12 sm:mb-16">
+        <h2 class="text-2xl sm:text-3xl font-bold text-emerald-900 text-center mb-6 sm:mb-8">Languages & Core Technologies</h2>
+        <div class="bg-white rounded-lg shadow-lg p-6 sm:p-8">
+          <div class="flex flex-wrap justify-center gap-3 sm:gap-4">
+            <img src="https://skillicons.dev/icons?i=python,go,rust,bash" alt="Core Languages" class="hover:scale-105 transition-transform max-w-full h-auto" />
+          </div>
+        </div>
+      </section>
+
+      <!-- AI/ML & Data Science -->
+      <section class="mb-12 sm:mb-16">
+        <h2 class="text-2xl sm:text-3xl font-bold text-emerald-900 text-center mb-6 sm:mb-8">AI/ML & Data Science</h2>
+        <div class="bg-white rounded-lg shadow-lg p-6 sm:p-8">
+          <div class="flex flex-wrap justify-center gap-3 sm:gap-4 mb-4 sm:mb-6">
+            <img src="https://skillicons.dev/icons?i=tensorflow,pytorch,sklearn" alt="ML Frameworks" class="hover:scale-105 transition-transform max-w-full h-auto" />
+          </div>
+          <div class="flex flex-wrap justify-center gap-3 sm:gap-4">
+            <img src="https://i.icoziv.workers.dev/icons?i=keras" alt="Keras" title="Keras" class="hover:scale-105 transition-transform" />
+            <img src="https://i.icoziv.workers.dev/icons?i=pandas-dark" alt="Pandas" title="Pandas" class="hover:scale-105 transition-transform" />
+            <img src="https://i.icoziv.workers.dev/icons?i=numpy-dark" alt="NumPy" title="NumPy" class="hover:scale-105 transition-transform" />
+            <img src="https://i.icoziv.workers.dev/icons?i=huggingface" alt="Hugging Face" title="Hugging Face" class="hover:scale-105 transition-transform" />
+            <img src="https://i.icoziv.workers.dev/icons?i=opencv-dark" alt="OpenCV" title="OpenCV" class="hover:scale-105 transition-transform" />
+            <img src="https://i.icoziv.workers.dev/icons?i=manim" alt="Manim" title="Manim" class="hover:scale-105 transition-transform" />
+          </div>
+        </div>
+      </section>
+
+      <!-- Web Frameworks & APIs -->
+      <section class="mb-12 sm:mb-16">
+        <h2 class="text-2xl sm:text-3xl font-bold text-emerald-900 text-center mb-6 sm:mb-8">Web Frameworks & APIs</h2>
+        <div class="bg-white rounded-lg shadow-lg p-6 sm:p-8">
+          <div class="flex flex-wrap justify-center gap-3 sm:gap-4 mb-4 sm:mb-6">
+            <img src="https://skillicons.dev/icons?i=fastapi,flask,django,htmx" alt="Web Frameworks" class="hover:scale-105 transition-transform max-w-full h-auto" />
+          </div>
+          <div class="flex flex-wrap justify-center gap-3 sm:gap-4">
+            <img src="https://i.icoziv.workers.dev/icons?i=gin" alt="Gin" title="Gin (Go)" class="hover:scale-105 transition-transform" />
+            <img src="https://i.icoziv.workers.dev/icons?i=litestar" alt="Litestar" title="Litestar" class="hover:scale-105 transition-transform" />
+            <img src="https://i.icoziv.workers.dev/icons?i=streamlit-dark" alt="Streamlit" title="Streamlit" class="hover:scale-105 transition-transform" />
+            <img src="https://i.icoziv.workers.dev/icons?i=pydantic" alt="Pydantic" title="Pydantic" class="hover:scale-105 transition-transform" />
+          </div>
+        </div>
+      </section>
+
+      <!-- Development Tools & Platforms -->
+      <section class="mb-12 sm:mb-16">
+        <h2 class="text-2xl sm:text-3xl font-bold text-emerald-900 text-center mb-6 sm:mb-8">Development Tools & Platforms</h2>
+        <div class="bg-white rounded-lg shadow-lg p-6 sm:p-8">
+          <div class="flex flex-wrap justify-center gap-3 sm:gap-4">
+            <img src="https://skillicons.dev/icons?i=git,github,gitlab,vscode,linux,ubuntu,latex,jenkins,docker" alt="Dev Tools" class="hover:scale-105 transition-transform max-w-full h-auto" />
+          </div>
+        </div>
+      </section>
+
+      <!-- Data & Notebooks -->
+      <section class="mb-12 sm:mb-16">
+        <h2 class="text-2xl sm:text-3xl font-bold text-emerald-900 text-center mb-6 sm:mb-8">Data & Notebooks</h2>
+        <div class="bg-white rounded-lg shadow-lg p-6 sm:p-8">
+          <div class="flex flex-wrap justify-center gap-3 sm:gap-4">
+            <img src="https://i.icoziv.workers.dev/icons?i=googlecolab-dark" alt="Google Colab" title="Google Colab" class="hover:scale-105 transition-transform" />
+            <img src="https://i.icoziv.workers.dev/icons?i=kaggle" alt="Kaggle" title="Kaggle" class="hover:scale-105 transition-transform" />
+            <img src="https://i.icoziv.workers.dev/icons?i=jupiter-dark" alt="Jupyter" title="Jupyter" class="hover:scale-105 transition-transform" />
+            <img src="https://i.icoziv.workers.dev/icons?i=huggingface" alt="Hugging Face" title="Hugging Face" class="hover:scale-105 transition-transform" />
+          </div>
+        </div>
+      </section>
+
+      <!-- Databases & Cloud -->
+      <section class="mb-12 sm:mb-16">
+        <h2 class="text-2xl sm:text-3xl font-bold text-emerald-900 text-center mb-6 sm:mb-8">Databases & Cloud</h2>
+        <div class="bg-white rounded-lg shadow-lg p-6 sm:p-8">
+          <div class="flex flex-wrap justify-center gap-3 sm:gap-4 mb-4 sm:mb-6">
+            <img src="https://skillicons.dev/icons?i=sqlite,mysql,postgresql,mongodb,redis,cassandra,d3,aws,gcp,azure" alt="Databases & Cloud" class="hover:scale-105 transition-transform max-w-full h-auto" />
+          </div>
+          <div class="flex flex-wrap justify-center gap-3 sm:gap-4">
+            <img src="https://i.icoziv.workers.dev/icons?i=supabase-dark" alt="Supabase" title="Supabase" class="hover:scale-105 transition-transform" />
+            <img src="https://i.icoziv.workers.dev/icons?i=digitalocean" alt="DigitalOcean" title="DigitalOcean" class="hover:scale-105 transition-transform" />
+          </div>
+        </div>
+      </section>
+
+      <!-- Learning Journey -->
+      <section class="bg-golden bg-opacity-20 rounded-lg p-6 sm:p-8 text-center">
+        <h3 class="text-xl sm:text-2xl font-bold text-emerald-900 mb-3 sm:mb-4">🌱 Always Learning</h3>
+        <p class="text-base sm:text-lg text-emerald-700 max-w-2xl mx-auto">
+          This tech stack continues to evolve as I explore new technologies and deepen my expertise. 
+          Each tool represents a step in my journey to build impactful solutions for Africa and beyond.
+        </p>
+      </section>
+
+    </div>
+  </main>
+</Layout>
+
+
+
+# global.css
+
+/* Global styles */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base styles */
+@layer base {
+  body {
+    @apply bg-offwhite text-emerald-900;
+  }
+}
+
+/* Custom animations */
+@layer utilities {
+  /* Fade in up animation */
+  .animate-fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+    opacity: 0;
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Wave animation for hand emoji */
+  .animate-wave {
+    animation: wave 2s infinite;
+    display: inline-block;
+    transform-origin: 70% 70%;
+  }
+  
+  @keyframes wave {
+    0%, 100% { transform: rotate(0deg); }
+    10%, 30% { transform: rotate(14deg); }
+    20% { transform: rotate(-8deg); }
+    40% { transform: rotate(-4deg); }
+    50% { transform: rotate(10deg); }
+  }
+
+  /* Text gradient animation */
+  .animate-text-gradient {
+    animation: textGradient 3s ease-in-out infinite;
+  }
+  
+  @keyframes textGradient {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  /* Slide right animation */
+  .animate-slide-right {
+    animation: slideRight 0.6s ease-out forwards;
+    opacity: 0;
+  }
+  
+  @keyframes slideRight {
+    from {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  /* Pulse glow animation */
+  .animate-pulse-glow {
+    animation: pulseGlow 2s ease-in-out infinite;
+  }
+  
+  @keyframes pulseGlow {
+    0%, 100% {
+      box-shadow: 0 0 20px rgba(200, 178, 115, 0.3);
+    }
+    50% {
+      box-shadow: 0 0 40px rgba(200, 178, 115, 0.6);
+    }
+  }
+
+  /* Float animation */
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  /* Fade in animation */
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-in;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Slide up animation */
+  .animate-slide-up {
+    animation: slideUp 0.6s ease-out;
+  }
+  
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+
+# tailwind.config.mjs
+
+// tailwind.config.mjs
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
+  theme: {
+    extend: {
+      colors: {
+        // Luxury Emerald & Gold Palette
+        emerald: {
+          900: '#022c22', // Deep Background
+          700: '#064e3b', // Hover state
+          500: '#10b981', // Main Accent
+        },
+        offwhite: '#f9f7f1', // Soft Background
+        golden: {
+          DEFAULT: '#c8b273', // Primary Gold
+          dark: '#E3AD00',    // Hover Gold
+
+        }
+      },
+    },
+  },
+  plugins: [],
+}
