@@ -14,7 +14,7 @@ export default {
         offwhite: '#f9f7f1', // Soft Background
         golden: {
           DEFAULT: '#c8b273', // Primary Gold
-          dark: '#E3AD00',    // Hover Gold
+          dark: '#E3AD00',    // Hover Gold (muted alternative: #a68a44) — kept as-is, see global.css for scrollbar
 
         }
       },
